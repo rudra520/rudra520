@@ -39,11 +39,11 @@
 | **Category**        | **Technologies** |
 |---------------------|------------------|
 | **Frontend**        | React, HTML5, CSS3, TailwindCSS |
-| **Backend**         | Node.js, Express |
-| **AI/ML**           | Python, TensorFlow, Scikit-learn, Pandas, NumPy |
-| **Databases**       | MongoDB, PostgreSQL |
-| **DevOps & Tools**  | Git, Docker, Kali Linux, VS Code |
-| **Other**           | REST APIs, Postman, Jupyter Notebook |
+| **Backend**         | Node.js |
+| **AI/ML**           | Python, Pandas, NumPy |
+| **Databases**       | PostgreSQL |
+| **Tools**           | Git, Kali Linux, VS Code |
+| **Other**           | Jupyter Notebook |
 
 ---
 
