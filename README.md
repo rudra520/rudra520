@@ -11,12 +11,12 @@
 
 ## 🚀 About Me
 
-- 🔭 I’m currently working on **your cool project**
-- 🌱 I’m learning **React, Node.js, or whatever you're into**
+- 🔭 I’m currently working on **AI Shastra**
+- 🌱 I’m learning **Data Science, Python, or Numpy and Panda**
 - 👯 I’m looking to collaborate on **open source or creative ideas**
-- 💬 Ask me about **JavaScript, Python, or web development**
-- 📫 How to reach me: **your.email@example.com**
-- ⚡ Fun fact: **I love solving puzzles / coffee / hiking**
+- 💬 Ask me about **GenAI, Python, or web development**
+- 📫 How to reach me: **rudra222000@gmail.com**
+- ⚡ Fun fact: **I love using kali  / Tool / Gaming 🎮**
 
 ---
 
