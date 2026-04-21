@@ -36,11 +36,11 @@
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=rudra520&show_icons=true&theme=radical" alt="GitHub Stats" height="170" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=your-username&layout=compact&theme=radical" alt="Top Languages" height="170" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rudra 520&layout=compact&theme=radical" alt="Top Languages" height="170" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=your-username&theme=radical" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=rudra 520&theme=radical" alt="GitHub Streak" />
 </p>
 
 ---
