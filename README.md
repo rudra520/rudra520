@@ -1,5 +1,5 @@
 <!-- Header / Banner (optional) -->
-<h1 align="center">Hi 👋, I'm Your Rudra Pratap Singh</h1>
+<h1 align="center">Hi 👋, I'm Rudra Pratap Singh</h1>
 <h3 align="center">On a way to become AI Engineer</h3>
 
 <!-- Typing SVG / tagline (optional) -->
