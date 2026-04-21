@@ -1,6 +1,6 @@
 <!-- Header / Banner (optional) -->
 <h1 align="center">Hi 👋, I'm Your Rudra Pratap Singh</h1>
-<h3 align="center">A passionate developer from Your Dehradun</h3>
+<h3 align="center">A passionate developer from Dehradun</h3>
 
 <!-- Typing SVG / tagline (optional) -->
 <p align="center">
