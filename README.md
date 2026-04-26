@@ -29,7 +29,8 @@ I am a developer on a mission to bridge the gap between human logic and machine 
 | **Artificial Intelligence** | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat&logo=numpy) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas) ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat&logo=jupyter) |
 | **Development** | ![JavaScript](https://img.shields.io/badge/JS-F7DF1E?style=flat&logo=javascript&logoColor=black) ![TypeScript](https://img.shields.io/badge/TS-3178C6?style=flat&logo=typescript) ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react) ![Node](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js) |
 | **The Lab** | ![Kali](https://img.shields.io/badge/Kali_Linux-557C94?style=flat&logo=kali-linux&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat&logo=postgresql) ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git) |
-
+[Eclipse](https://img.shields.io/eclipse-marketplace/:interval/:name)
+|**Programming languages** | ![Kali](
 ---
 
 ### 📊 System Diagnostics (GitHub Stats)
