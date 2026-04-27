@@ -1,0 +1,393 @@
+html_content = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rudra Pratap Singh | Portfolio v3</title>
+    <style>
+        :root {
+            --bg-black: #010204;
+            --card-bg: #0d1117;
+            --primary-blue: #1f6feb;
+            --accent-blue: #58a6ff;
+            --neon-blue: #00d4ff;
+            --text-white: #f0f6fc;
+            --text-dim: #8b949e;
+            --border: #30363d;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            opacity: 0;
+            animation: site-entry 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+
+        @keyframes site-entry {
+            0% { opacity: 0; transform: translateY(20px); filter: blur(10px); }
+            100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+
+        /* Pixel Game Header Section */
+        #pixel-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 500px;
+            z-index: 0;
+            opacity: 0.4;
+            image-rendering: pixelated;
+        }
+
+        #cursor-blur {
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s;
+        }
+
+        /* Header / Hero */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: clamp(3.5rem, 12vw, 6rem);
+            font-weight: 900;
+            background: linear-gradient(to right, #fff, var(--neon-blue), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+
+        .hero-sub {
+            font-size: 1.4rem;
+            color: var(--accent-blue);
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        /* About Me Section - NEW */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--text-white);
+        }
+
+        .about-text p {
+            color: var(--text-dim);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Recreated Expertise Section */
+        .expertise-recreated {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 16px;
+            transition: all 0.4s ease;
+        }
+
+        .skill-box:hover {
+            border-color: var(--neon-blue);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .skill-box h4 {
+            color: var(--neon-blue);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 16px 40px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 1px solid var(--primary-blue);
+            background: rgba(31, 111, 235, 0.1);
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn:hover {
+            background: var(--primary-blue);
+            box-shadow: 0 0 30px rgba(31, 111, 235, 0.5);
+            transform: scale(1.05);
+        }
+
+        /* Section Global */
+        section {
+            padding: 120px 10%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--text-white);
+        }
+
+        .section-header .line {
+            width: 80px;
+            height: 4px;
+            background: var(--primary-blue);
+            margin-top: 10px;
+            border-radius: 2px;
+        }
+
+        /* AI Sastra Spotlight */
+        .aisastra-reborn {
+            background: linear-gradient(135deg, #0d1117 0%, #001a33 100%);
+            border: 1px solid var(--primary-blue);
+            border-radius: 40px;
+            padding: 80px 40px;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Tech Stack Section - NEW */
+        .tech-pill {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            margin: 5px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .tech-pill:hover {
+            border-color: var(--neon-blue);
+            color: var(--neon-blue);
+        }
+
+        /* Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            padding: 80px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+        }
+
+        @media (max-width: 768px) {
+            .about-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="pixel-canvas"></canvas>
+    <div id="cursor-blur"></div>
+
+    <header>
+        <div class="hero-sub">Founder of Xpertik & AI Shastra</div>
+        <h1>Rudra Pratap</h1>
+        <p style="max-width: 600px; color: var(--text-dim); margin-bottom: 40px; font-size: 1.1rem;">
+            Specializing in Artificial Intelligence and Machine Learning. 
+            Bridging the gap between human logic and machine intelligence from Dehradun, India.
+        </p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+            <a href="https://github.com/rudra520" target="_blank" class="btn">Explore GitHub</a>
+            <a href="https://www.linkedin.com/in/rudra-pratap-singh-ba6ab637b" target="_blank" class="btn" style="border-color: var(--neon-blue);">Connect on LinkedIn</a>
+        </div>
+    </header>
+
+    <section id="about" class="reveal">
+        <div class="about-container">
+            <div class="about-text">
+                <div class="section-header">
+                    <h2>About Me</h2>
+                    <div class="line"></div>
+                </div>
+                <p>I am an AI & Machine Learning Engineering student at the <strong>Faculty of Uttaranchal Institute of Technology</strong> (UUIH '25). My journey is driven by a passion for solving complex problems through code and intelligence.</p>
+                <p>As the Co-Founder of <strong>Xpertik</strong>, I lead front-end initiatives and product strategy. I thrive in hackathons, having led <strong>Team BROZZZ</strong> to victory in internal competitions and participated in national events like HaXplore.</p>
+                <p>My technical expertise spans from high-level Generative AI and Neural Networks to low-level systems in C and Java.</p>
+            </div>
+            <div class="skill-cloud">
+                <div class="tech-pill">Artificial Intelligence</div>
+                <div class="tech-pill">Machine Learning</div>
+                <div class="tech-pill">Python</div>
+                <div class="tech-pill">Numpy</div>
+                <div class="tech-pill">React.js</div>
+                <div class="tech-pill">Generative AI</div>
+                <div class="tech-pill">Cybersecurity</div>
+                <div class="tech-pill">Kali Linux</div>
+                <div class="tech-pill">Deep Learning</div>
+                <div class="tech-pill">Neural Networks</div>
+                <div class="tech-pill">Data Analysis</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="reveal">
+        <div class="section-header">
+            <h2>Core Expertise</h2>
+            <div class="line"></div>
+        </div>
+        <div class="expertise-recreated">
+            <div class="skill-box">
+                <h4><span>⚡</span> AI & ML</h4>
+                <p>Developing robust models using Python, focusing on Deep Learning and Linear Algebra foundations.</p>
+            </div>
+            <div class="skill-box">
+                <h4><span>🌐</span> Full-Stack</h4>
+                <p>Certified Web Designer crafting responsive interfaces with React, Node.js, and modern CSS.</p>
+            </div>
+            <div class="skill-box">
+                <h4><span>🛡️</span> Security</h4>
+                <p>Proficient in Kali Linux and digital footprint management, ensuring ethical and secure development.</p>
+            </div>
+            <div class="skill-box">
+                <h4><span>🚀</span> Leadership</h4>
+                <p>Startup co-founder and Team Leader (Team BROZZZ) with experience in managing complex tech projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="reveal">
+        <div class="aisastra-reborn">
+            <h2 style="font-size: 3rem; margin-bottom: 20px;">AI - Sastra</h2>
+            <p style="font-size: 1.2rem; color: var(--accent-blue); margin-bottom: 30px;">The Global Web Directory for AI Democratization</p>
+            <p style="max-width: 800px; margin: 0 auto 40px; color: var(--text-dim);">
+                AI-Sastra is a comprehensive directory designed to bridge the gap between complex technology and everyday users. Whether you are a student, professional, or senior, AISastra provides the roadmap to navigate the AI revolution.
+            </p>
+            <div style="margin-bottom: 40px;">
+                <span class="tech-pill" style="border-color: var(--primary-blue);">Live Project</span>
+                <span class="tech-pill" style="border-color: var(--primary-blue);">Open Source</span>
+            </div>
+            <a href="https://ai-sastra.netlify.app/" target="_blank" class="btn">Launch Directory &rarr;</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed & Developed by <strong>Rudra Pratap Singh</strong></p>
+        <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.6;">B.Tech AI & ML | Dehradun, Uttarakhand</p>
+    </footer>
+
+    <script>
+        // Pixel Animation Header
+        const canvas = document.getElementById('pixel-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function initPixels() {
+            canvas.width = window.innerWidth;
+            canvas.height = 500;
+            particles = [];
+            for (let i = 0; i < 80; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 3 + 1,
+                    speed: Math.random() * 0.5 + 0.2,
+                    alpha: Math.random() * 0.5
+                });
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.y += p.speed;
+                if (p.y > canvas.height) p.y = 0;
+                ctx.fillStyle = `rgba(0, 212, 255, ${p.alpha})`;
+                ctx.fillRect(p.x, p.y, p.size, p.size);
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', initPixels);
+        initPixels();
+        animate();
+
+        // Cursor Follow
+        const blur = document.getElementById('cursor-blur');
+        document.addEventListener('mousemove', (e) => {
+            blur.style.left = e.clientX + 'px';
+            blur.style.top = e.clientY + 'px';
+        });
+
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
+"""
+
+with open("rudra_portfolio_v3.html", "w") as f:
+    f.write(html_content)
+
