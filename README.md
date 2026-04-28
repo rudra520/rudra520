@@ -19,7 +19,7 @@
 ### 🧠 System Architecture (Profile Summary)
 I am a technical architect bridging the gap between human logic and machine intelligence. By day, I build scalable AI solutions; by night, I explore the vulnerabilities of the digital world.
 
-* 🔭 **Mission:** Developing **[AI Shastra](https://github.com/rudra520/)** to democratize machine learning.
+* 🔭 **Mission:** Developing **[AI Shastra](https://github.com/rudra520/AI-Sastra-)** to democratize machine learning.
 * 🌱 **Learning Path:** Deep Learning, Linear Algebra, and Neural Networks.
 * ⚡ **Secret Talent:** Can navigate a terminal faster than a GUI.
 * 💬 **Ask me about:** Why Python rules the AI kingdom or how to harden web applications.
