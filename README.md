@@ -82,4 +82,5 @@ I'm always looking for interesting collaborations in GenAI or Open Source. Drop 
 
 <p align="left">
   <img src="https://komarev.com/ghpvc/?username=rudra520&label=Profile%20Views&color=42A5F5&style=flat-square" />
+<a href="mailto:rudra222000@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 </p>
