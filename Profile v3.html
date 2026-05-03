@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rudra Pratap Singh | Technical Architect</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #000000;
+            --sec-green: #00FF41;
+            --ai-blue: #00A3FF;
+            --text: #ffffff;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Space Grotesk', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Mirror Effect */
+        .mirror {
+            -webkit-box-reflect: below -10px linear-gradient(transparent, rgba(255,255,255,0.1));
+        }
+
+        /* Large Header UI */
+        nav {
+            padding: 2rem 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .logo { font-family: 'JetBrains Mono'; font-weight: 700; font-size: 1.2rem; letter-spacing: -1px; }
+
+        /* Massive Typography Hero */
+        .hero {
+            padding: 10vh 5% 5vh;
+            display: flex; flex-direction: column; align-items: flex-start;
+        }
+        .hero h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(4rem, 15vw, 12rem);
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            background: linear-gradient(180deg, #fff 40%, #333 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-meta {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            width: 100%; gap: 2rem; border-top: 1px solid var(--border); padding-top: 2rem;
+        }
+        .meta-box h3 { font-size: 0.7rem; color: #555; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .meta-box p { font-size: 1.1rem; font-weight: 500; }
+
+        /* GitHub Live Grid */
+        .github-container { padding: 5rem 5%; }
+        .section-tag { font-family: 'JetBrains Mono'; color: var(--ai-blue); margin-bottom: 1rem; display: block; }
+        
+        .gh-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border);
+            border: 1px solid var(--border);
+        }
+        .gh-card {
+            background: var(--bg); padding: 3rem 2rem;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .gh-card .num { font-size: 4rem; font-weight: 700; font-family: 'JetBrains Mono'; }
+        .gh-card .label { color: #555; font-size: 0.8rem; text-transform: uppercase; margin-top: 0.5rem; }
+
+        /* Capability Blocks */
+        .capabilities { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
+        .cap-box { background: var(--bg); padding: 5rem 10%; transition: 0.3s; }
+        .cap-box:hover { background: #050505; }
+        .cap-box.security { border-top: 4px solid var(--sec-green); }
+        .cap-box.ai { border-top: 4px solid var(--ai-blue); }
+        .cap-box h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .green { color: var(--sec-green); }
+        .blue { color: var(--ai-blue); }
+
+        /* Chatbot - Floating Clean */
+        #rudra-bot { position: fixed; bottom: 40px; right: 40px; z-index: 1000; }
+        .bot-toggle {
+            width: 60px; height: 60px; border-radius: 50%; background: white; color: black;
+            border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 10px 40px rgba(255,255,255,0.1);
+        }
+        .bot-ui {
+            position: absolute; bottom: 80px; right: 0; width: 320px; height: 450px;
+            background: #0A0A0A; border: 1px solid var(--border); border-radius: 16px;
+            display: none; flex-direction: column; overflow: hidden;
+        }
+        .bot-msgs { flex: 1; padding: 1.5rem; overflow-y: auto; font-size: 0.85rem; line-height: 1.5; }
+        .msg { margin-bottom: 1rem; max-width: 85%; }
+        .msg.bot { color: var(--ai-blue); }
+        .msg.user { color: white; background: #1a1a1a; padding: 8px 12px; border-radius: 8px; align-self: flex-end; }
+        .bot-input { padding: 1rem; border-top: 1px solid var(--border); display: flex; }
+        .bot-input input { background: transparent; border: none; color: white; flex: 1; outline: none; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 5rem; }
+            .gh-grid, .capabilities { grid-template-columns: 1fr; }
+            .hero-meta { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">RUDRA.ARCHITECTURE</div>
+        <div style="display:flex; gap: 2rem;">
+            <a href="https://github.com/rudra520" style="color:white; text-decoration:none; font-size:0.9rem;">GITHUB</a>
+            <a href="#" style="color:white; text-decoration:none; font-size:0.9rem;">LINKEDIN</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1 class="mirror">RUDRA<br>PRATAP</h1>
+        <div class="hero-meta">
+            <div class="meta-box">
+                <h3>Discipline</h3>
+                <p>Systems Security & Intelligence</p>
+            </div>
+            <div class="meta-box">
+                <h3>Focus</h3>
+                <p>AI Shastra Founder</p>
+            </div>
+            <div class="meta-box">
+                <h3>Location</h3>
+                <p>India // Remote</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="github-container">
+        <span class="section-tag">// LIVE_GITHUB_METRICS</span>
+        <div class="gh-grid">
+            <div class="gh-card">
+                <div class="num blue" id="repo-count">0</div>
+                <div class="label">Repositories</div>
+            </div>
+            <div class="gh-card">
+                <div class="num blue" id="follower-count">0</div>
+                <div class="label">Followers</div>
+            </div>
+            <div class="gh-card">
+                <div class="num blue" id="last-update" style="font-size: 1.5rem;">SYNCING...</div>
+                <div class="label">Last Activity</div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 1px; background: var(--bg); border: 1px solid var(--border); padding: 2rem; text-align: center;">
+            <img src="https://ghchart.rshah.org/00A3FF/rudra520" alt="Heatmap" style="width: 100%; filter: grayscale(1) invert(1) brightness(2);">
+        </div>
+    </section>
+
+    <section class="capabilities">
+        <div class="cap-box security">
+            <h2 class="green">CYBER<br>SECURITY</h2>
+            <p style="color: #888;">Advanced threat modeling, vulnerability research, and digital hardening. Protecting systems by thinking like the adversary.</p>
+        </div>
+        <div class="cap-box ai">
+            <h2 class="blue">AI<br>SHASTRA</h2>
+            <p style="color: #888;">Founder and Lead. Engineering neural architectures and data intelligence tools to democratize machine learning.</p>
+        </div>
+    </section>
+
+    <!-- Chatbot UI -->
+    <div id="rudra-bot">
+        <div class="bot-ui" id="botUi">
+            <div style="padding: 1rem; border-bottom: 1px solid var(--border); font-weight: bold; font-size: 0.8rem;">RUDRA-BOT v4.0</div>
+            <div class="bot-msgs" id="botMsgs">
+                <div class="msg bot">System initialized. Ask me about Rudra's work, current time, or a math calculation.</div>
+            </div>
+            <div class="bot-input">
+                <input type="text" id="botInput" placeholder="Enter command...">
+            </div>
+        </div>
+        <button class="bot-toggle" onclick="toggleBot()">
+            <i data-lucide="terminal"></i>
+        </button>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // 1. Fixed & Clean GitHub API Integration
+        async function loadGithub() {
+            try {
+                const userResponse = await fetch('https://api.github.com/users/rudra520');
+                const user = await userResponse.json();
+                
+                const repoResponse = await fetch('https://api.github.com/users/rudra520/repos?sort=updated');
+                const repos = await repoResponse.json();
+
+                if(user.public_repos) {
+                    document.getElementById('repo-count').innerText = user.public_repos;
+                    document.getElementById('follower-count').innerText = user.followers;
+                    
+                    const lastDate = new Date(repos[0].updated_at);
+                    document.getElementById('last-update').innerText = lastDate.toLocaleDateString('en-US', {month:'short', day:'numeric'});
+                }
+            } catch (err) {
+                document.getElementById('last-update').innerText = "OFFLINE";
+            }
+        }
+        loadGithub();
+
+        // 2. Chatbot Functionality
+        const botUi = document.getElementById('botUi');
+        const botMsgs = document.getElementById('botMsgs');
+        const botInput = document.getElementById('botInput');
+
+        function toggleBot() {
+            botUi.style.display = botUi.style.display === 'flex' ? 'none' : 'flex';
+            if(botUi.style.display === 'flex') botInput.focus();
+        }
+
+        function addMsg(text, type) {
+            const div = document.createElement('div');
+            div.className = `msg ${type}`;
+            div.innerHTML = text;
+            botMsgs.appendChild(div);
+            botMsgs.scrollTop = botMsgs.scrollHeight;
+        }
+
+        botInput.addEventListener('keypress', (e) => {
+            if(e.key === 'Enter' && botInput.value.trim()) {
+                const input = botInput.value.trim();
+                addMsg(input, 'user');
+                botInput.value = '';
+
+                setTimeout(() => {
+                    const q = input.toLowerCase();
+                    if (/[0-9]/.test(q) && (q.includes('+') || q.includes('-') || q.includes('*') || q.includes('/'))) {
+                        try { addMsg(`Result: ${eval(q.replace(/[^-()\d/*+.]/g, ''))}`, 'bot'); } catch { addMsg("Error in calc.", 'bot'); }
+                    } 
+                    else if (q.includes('time')) addMsg(`Current system time: ${new Date().toLocaleTimeString()}`, 'bot');
+                    else if (q.includes('who')) addMsg("Rudra is a Technical Architect & Security Expert.", 'bot');
+                    else if (q.includes('repos')) addMsg(`He has ${document.getElementById('repo-count').innerText} public projects.`, 'bot');
+                    else addMsg("Command not recognized. Try 'time' or '25 * 4'.", 'bot');
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>
