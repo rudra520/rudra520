@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rudra Pratap Singh | Technical Architect</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --card-bg: rgba(20, 20, 20, 0.8);
+            --primary: #42A5F5;
+            --secondary: #00E676;
+            --text: #ffffff;
+            --text-dim: #a0a0a0;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Ambient Background Background */
+        .glow {
+            position: fixed;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(66, 165, 245, 0.1) 0%, transparent 70%);
+            top: -100px; right: -100px; z-index: -1;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 2rem 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        .logo { font-family: 'JetBrains Mono'; font-weight: 800; font-size: 1.2rem; color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            display: flex; flex-direction: column; justify-content: center;
+            padding: 0 10%;
+        }
+        .system-init { font-family: 'JetBrains Mono'; color: var(--secondary); margin-bottom: 1rem; }
+        h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+        .gradient-text {
+            background: linear-gradient(90deg, #42A5F5, #00E676);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .tagline { font-size: 1.2rem; color: var(--text-dim); max-width: 600px; margin-bottom: 2rem; }
+
+        /* Tech Arsenal Grid */
+        .section-title { padding: 4rem 10% 2rem; font-size: 2rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem; padding: 0 10% 4rem;
+        }
+        .card {
+            background: var(--card-bg);
+            padding: 2rem; border: 1px solid var(--border); border-radius: 16px;
+            transition: all 0.3s ease; position: relative; overflow: hidden;
+        }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .card i { color: var(--primary); margin-bottom: 1rem; }
+        .card h3 { margin-bottom: 0.5rem; }
+        .card p { color: var(--text-dim); font-size: 0.9rem; }
+
+        /* Chatbot UI */
+        #chat-widget {
+            position: fixed; bottom: 30px; right: 30px; z-index: 1000;
+        }
+        .chat-btn {
+            width: 60px; height: 60px; border-radius: 50%;
+            background: var(--primary); color: white; border: none;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 10px 30px rgba(66, 165, 245, 0.4);
+        }
+        .chat-window {
+            position: absolute; bottom: 80px; right: 0;
+            width: 350px; height: 450px; background: #111;
+            border-radius: 20px; border: 1px solid var(--border);
+            display: none; flex-direction: column; overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        .chat-header { background: var(--primary); padding: 1rem; font-weight: 600; font-size: 0.9rem; }
+        .chat-messages { flex: 1; padding: 1rem; overflow-y: auto; font-size: 0.85rem; display: flex; flex-direction: column; gap: 10px; }
+        .msg { padding: 8px 12px; border-radius: 12px; max-width: 80%; }
+        .msg.bot { background: #222; align-self: flex-start; }
+        .msg.user { background: var(--primary); align-self: flex-end; }
+        .chat-input { padding: 1rem; display: flex; gap: 5px; border-top: 1px solid var(--border); }
+        .chat-input input {
+            flex: 1; background: transparent; border: 1px solid var(--border);
+            border-radius: 8px; color: white; padding: 5px 10px; outline: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 0 5%; }
+            .chat-window { width: calc(100vw - 60px); right: -10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow"></div>
+
+    <nav>
+        <div class="logo">RUDRA.SYS</div>
+        <div class="links">
+            <a href="https://github.com/rudra520" style="color: white; margin-left: 20px;"><i data-lucide="github"></i></a>
+            <a href="https://www.linkedin.com/in/rudra-pratap-singh-ba6ab637b" style="color: white; margin-left: 20px;"><i data-lucide="linkedin"></i></a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="system-init">> System.Initialize("Rudra Pratap Singh")</div>
+            <h1>The Technical <br><span class="gradient-text">Architect.</span></h1>
+            <p class="tagline">
+                Bridging the gap between human logic and machine intelligence. 
+                Full-stack engineering infused with AI Shastra and Cybersecurity.
+            </p>
+            <div style="display: flex; gap: 20px;">
+                <div style="display: flex; align-items: center; gap: 8px; color: var(--secondary);">
+                    <i data-lucide="cpu" size="20"></i> AI & ML Engineer
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; color: var(--primary);">
+                    <i data-lucide="shield" size="20"></i> Cyber Enthusiast
+                </div>
+            </div>
+        </section>
+
+        <h2 class="section-title">Core Arsenal</h2>
+        <div class="grid">
+            <div class="card">
+                <i data-lucide="brain"></i>
+                <h3>Artificial Intelligence</h3>
+                <p>Neural Networks, Deep Learning, and AI Shastra. Specialized in Python, NumPy, and Pandas.</p>
+            </div>
+            <div class="card">
+                <i data-lucide="code-2"></i>
+                <h3>Full Stack Dev</h3>
+                <p>Building scalable systems using React, TypeScript, Node.js, and Django.</p>
+            </div>
+            <div class="card">
+                <i data-lucide="terminal"></i>
+                <h3>Cyber Security</h3>
+                <p>Digital hardening and vulnerability assessment. Expert in Kali Linux environments.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Active Missions</h2>
+        <div class="grid">
+            <div class="card" style="border-left: 4px solid var(--secondary);">
+                <span style="font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--secondary);">PROJECT_01</span>
+                <h3>AI Shastra</h3>
+                <p>Developing an initiative to democratize machine learning and bring high-level AI tools to the masses.</p>
+            </div>
+            <div class="card">
+                <span style="font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--primary);">PROJECT_02</span>
+                <h3>System Dynamics</h3>
+                <p>Exploring the deep drive in data to predict and solve complex architectural challenges.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Chatbot Widget -->
+    <div id="chat-widget">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">Rudra-Bot v1.0 (AI Guide)</div>
+            <div class="chat-messages" id="chatMsgs">
+                <div class="msg bot">Hello! I'm the AI twin of Rudra. Ask me about his projects, tech stack, or how to hire him.</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type a command...">
+                <button onclick="sendMessage()" style="background: var(--primary); border: none; padding: 5px 10px; border-radius: 5px; color: white; cursor: pointer;">Send</button>
+            </div>
+        </div>
+        <button class="chat-btn" onclick="toggleChat()">
+            <i data-lucide="message-square"></i>
+        </button>
+    </div>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Chatbot Logic
+        const chatWindow = document.getElementById('chatWindow');
+        const chatMsgs = document.getElementById('chatMsgs');
+        const userInput = document.getElementById('userInput');
+
+        const rudraInfo = {
+            "who": "Rudra Pratap Singh is a Technical Architect specialized in AI, ML, and Cybersecurity. He believes in 'Deep drive in data'.",
+            "shastra": "AI Shastra is Rudra's mission to democratize Machine Learning for everyone.",
+            "tech": "His arsenal includes Python, React, Django, Kali Linux, and Neural Networks.",
+            "contact": "You can reach him at rudra222000@gmail.com or via LinkedIn.",
+            "default": "I'm still learning about Rudra's world. Try asking: 'Who is Rudra?', 'What is AI Shastra?', or 'What tech does he use?'"
+        };
+
+        function toggleChat() {
+            chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function sendMessage() {
+            const text = userInput.value.toLowerCase();
+            if(!text) return;
+
+            // User Message
+            const uMsg = document.createElement('div');
+            uMsg.className = 'msg user';
+            uMsg.innerText = userInput.value;
+            chatMsgs.appendChild(uMsg);
+            userInput.value = '';
+
+            // Bot Response Logic
+            setTimeout(() => {
+                const bMsg = document.createElement('div');
+                bMsg.className = 'msg bot';
+                
+                if(text.includes('who')) bMsg.innerText = rudraInfo.who;
+                else if(text.includes('shastra') || text.includes('project')) bMsg.innerText = rudraInfo.shastra;
+                else if(text.includes('tech') || text.includes('skill')) bMsg.innerText = rudraInfo.tech;
+                else if(text.includes('contact') || text.includes('hire') || text.includes('email')) bMsg.innerText = rudraInfo.contact;
+                else bMsg.innerText = rudraInfo.default;
+
+                chatMsgs.appendChild(bMsg);
+                chatMsgs.scrollTop = chatMsgs.scrollHeight;
+            }, 600);
+        }
+
+        // Enter key for chat
+        userInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") sendMessage();
+        });
+    </script>
+</body>
+</html>
