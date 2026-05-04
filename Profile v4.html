@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rudra Pratap Singh | AI Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --accent: #00ff9d;
+            --accent-dim: #00cc7d;
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --surface-hover: #1a1a1a;
+            --border: #262626;
+            --linkedin: #0a66c2;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: #e5e5e5;
+            overflow-x: hidden;
+            cursor: crosshair;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-dim);
+        }
+
+        .grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+        }
+
+        .glitch {
+            position: relative;
+            animation: glitch-skew 1s infinite linear alternate-reverse;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00ff;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00ff9d;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(31px, 9999px, 94px, 0); }
+            20% { clip: rect(58px, 9999px, 12px, 0); }
+            40% { clip: rect(12px, 9999px, 78px, 0); }
+            60% { clip: rect(89px, 9999px, 34px, 0); }
+            80% { clip: rect(45px, 9999px, 67px, 0); }
+            100% { clip: rect(23px, 9999px, 91px, 0); }
+        }
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 99px, 0); }
+            20% { clip: rect(12px, 9999px, 45px, 0); }
+            40% { clip: rect(78px, 9999px, 23px, 0); }
+            60% { clip: rect(34px, 9999px, 56px, 0); }
+            80% { clip: rect(91px, 9999px, 12px, 0); }
+            100% { clip: rect(56px, 9999px, 78px, 0); }
+        }
+        @keyframes glitch-skew {
+            0% { transform: skew(0deg); }
+            10% { transform: skew(-2deg); }
+            20% { transform: skew(2deg); }
+            30% { transform: skew(0deg); }
+            100% { transform: skew(0deg); }
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 640px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .bento-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .bento-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(0,255,157,0.06), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .bento-card:hover::before {
+            opacity: 1;
+        }
+
+        .bento-card:hover {
+            border-color: rgba(0,255,157,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+        }
+
+        .span-2 {
+            grid-column: span 2;
+        }
+        .span-2-row {
+            grid-row: span 2;
+        }
+
+        @media (max-width: 640px) {
+            .span-2, .span-2-row {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+
+        .typing-cursor::after {
+            content: '▋';
+            animation: blink 1s infinite;
+            color: var(--accent);
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .chat-widget {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 100;
+        }
+
+        .chat-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.1) rotate(5deg);
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(0,255,157,0.2);
+        }
+
+        .chat-toggle.pulse::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            animation: pulse-ring 2s infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .chat-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 380px;
+            height: 500px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8);
+        }
+
+        .chat-window.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+
+        .chat-header {
+            background: rgba(0,0,0,0.3);
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .message {
+            max-width: 85%;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            animation: messageSlide 0.3s ease-out;
+        }
+
+        @keyframes messageSlide {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message.user {
+            align-self: flex-end;
+            background: var(--accent);
+            color: #000;
+            font-weight: 500;
+        }
+
+        .message.bot {
+            align-self: flex-start;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: #e5e5e5;
+        }
+
+        .chat-input-area {
+            padding: 1rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input {
+            flex: 1;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .chat-input:focus {
+            border-color: var(--accent);
+        }
+
+        .send-btn {
+            background: var(--accent);
+            border: none;
+            border-radius: 10px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #000;
+            transition: transform 0.2s;
+        }
+
+        .send-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .skill-bar {
+            height: 4px;
+            background: var(--bg);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+        .skill-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 2px;
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .repo-card {
+            padding: 0.75rem;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+        .repo-card:hover {
+            border-color: var(--accent);
+            background: rgba(0,255,157,0.05);
+        }
+
+        .loading-skeleton {
+            background: linear-gradient(90deg, var(--surface) 25%, var(--surface-hover) 50%, var(--surface) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .particle {
+            position: fixed;
+            width: 2px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: float-up 10s infinite;
+        }
+        @keyframes float-up {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .chat-window {
+                width: calc(100vw - 2rem);
+                right: -1rem;
+            }
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(0,255,157,0.1);
+            border: 1px solid rgba(0,255,157,0.2);
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .linkedin-tag {
+            background: rgba(10,102,194,0.1);
+            border: 1px solid rgba(10,102,194,0.2);
+            color: #60a5fa;
+        }
+
+        .link-hover {
+            position: relative;
+            display: inline-block;
+        }
+        .link-hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s;
+        }
+        .link-hover:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .lang-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--border);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0.5rem;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .timeline-item.active::before {
+            background: var(--linkedin);
+            box-shadow: 0 0 8px var(--linkedin);
+        }
+
+        .experience-card {
+            background: rgba(10,102,194,0.05);
+            border: 1px solid rgba(10,102,194,0.15);
+            border-radius: 12px;
+            padding: 1rem;
+            transition: all 0.3s;
+        }
+
+        .experience-card:hover {
+            border-color: rgba(10,102,194,0.4);
+            background: rgba(10,102,194,0.08);
+        }
+
+        .linkedin-btn {
+            background: rgba(10,102,194,0.1);
+            border: 1px solid rgba(10,102,194,0.3);
+            color: #60a5fa;
+        }
+
+        .linkedin-btn:hover {
+            background: rgba(10,102,194,0.2);
+            border-color: rgba(10,102,194,0.5);
+        }
+
+        /* News Ticker */
+        .news-ticker {
+            overflow: hidden;
+            position: relative;
+            background: rgba(0,0,0,0.3);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .news-scroll {
+            display: flex;
+            animation: scroll-news 30s linear infinite;
+            width: max-content;
+        }
+
+        .news-scroll:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll-news {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .news-item {
+            flex-shrink: 0;
+            padding: 0.75rem 1.5rem;
+            border-right: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .news-item:hover {
+            background: rgba(0,255,157,0.05);
+        }
+
+        .news-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: blink 2s infinite;
+        }
+
+        .news-card {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem;
+            transition: all 0.3s;
+            height: 100%;
+        }
+
+        .news-card:hover {
+            border-color: rgba(0,255,157,0.3);
+            transform: translateY(-2px);
+        }
+
+        .news-source {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .news-time {
+            font-size: 0.7rem;
+            color: #6b7280;
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div class="grain"></div>
+    <div class="grid-bg fixed inset-0 pointer-events-none"></div>
+    
+    <div id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-40 bg-black/50 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="mono text-sm tracking-widest text-gray-400">
+                <span class="text-emerald-400">root@rudra</span>:<span class="text-blue-400">~</span>$
+            </div>
+            <div class="flex gap-6 text-sm">
+                <a href="#about" class="link-hover text-gray-400 hover:text-white transition-colors">About</a>
+                <a href="#stack" class="link-hover text-gray-400 hover:text-white transition-colors">Stack</a>
+                <a href="#github" class="link-hover text-gray-400 hover:text-white transition-colors">GitHub</a>
+                <a href="#linkedin" class="link-hover text-gray-400 hover:text-white transition-colors">LinkedIn</a>
+                <a href="#academics" class="link-hover text-gray-400 hover:text-white transition-colors">Academics</a>
+                <a href="#news" class="link-hover text-gray-400 hover:text-white transition-colors">Tech News</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
+            <div class="text-[20vw] font-bold mono text-white/5 select-none">RPS</div>
+        </div>
+        
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <div class="mb-6 inline-block">
+                <span class="mono text-xs text-emerald-400 border border-emerald-400/30 px-3 py-1 rounded-full">
+                    Profile.rudra520 // AI Expert
+                </span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+                <span class="glitch" data-text="Rudra Pratap Singh">Rudra Pratap Singh</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-400 mb-8 font-light">
+                AI Architect bridging <span class="text-emerald-400">human logic</span> & <span class="text-emerald-400">machine intelligence</span>
+            </p>
+            
+            <div class="mono text-sm text-gray-500 mb-12 typing-cursor" id="typewriter">
+                Developing AI Shastra to democratize AI...
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://github.com/rudra520" target="_blank" class="group relative px-6 py-3 bg-emerald-400/10 border border-emerald-400/30 rounded-lg overflow-hidden transition-all hover:border-emerald-400">
+                    <div class="absolute inset-0 bg-emerald-400/10 translate-y-full group-hover:translate-y-0 transition-transform"></div>
+                    <span class="relative flex items-center gap-2 text-emerald-400 font-medium">
+                        <i data-lucide="github" class="w-4 h-4"></i>
+                        GitHub
+                    </span>
+                </a>
+                <a href="https://www.linkedin.com/in/rudra-pratap-singh-ba6ab637b" target="_blank" class="group relative px-6 py-3 bg-blue-400/10 border border-blue-400/30 rounded-lg overflow-hidden transition-all hover:border-blue-400">
+                    <div class="absolute inset-0 bg-blue-400/10 translate-y-full group-hover:translate-y-0 transition-transform"></div>
+                    <span class="relative flex items-center gap-2 text-blue-400 font-medium">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        LinkedIn
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Dashboard -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-6 mb-12">
+            <h2 class="text-3xl font-bold mb-2">System Architecture</h2>
+            <p class="text-gray-500 mono text-sm">// rudra520_DASHBOARD_LOADED</p>
+        </div>
+
+        <div class="bento-grid">
+            <!-- Profile Card -->
+            <div class="bento-card span-2" onmousemove="handleMouseMove(event, this)" onmouseleave="handleMouseLeave(this)">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-1">Identity Matrix</h3>
+                        <p class="text-xs text-gray-500 mono">ID: rudra520 // STATUS: ACTIVE</p>
+                    </div>
+                    <div class="w-12 h-12 rounded-full bg-emerald-400/10 border border-emerald-400/30 flex items-center justify-center overflow-hidden">
+                        <img id="gh-avatar" src="https://avatars.githubusercontent.com/u/195541218?v=4" alt="Rudra" class="w-full h-full object-cover opacity-80">
+                    </div>
+                </div>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    AI Engineering Student | Python • Java • C | Front-end Development | Certified Web Designer | Exploring Generative AI | Working With Pocket Lawyer
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag"><i data-lucide="brain" class="w-3 h-3"></i> Deep Learning</span>
+                    <span class="tag"><i data-lucide="shield" class="w-3 h-3"></i> Cyber Security</span>
+                    <span class="tag"><i data-lucide="terminal" class="w-3 h-3"></i> Open Source</span>
+                    <span class="tag"><i data-lucide="zap" class="w-3 h-3"></i> GenAI</span>
+                </div>
+            </div>
+
+            <!-- LIVE GitHub Stats -->
+            <div class="bento-card span-2" id="github" onmousemove="handleMouseMove(event, this)" onmouseleave="handleMouseLeave(this)">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold flex items-center gap-2">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                        GitHub Live Feed
+                    </h3>
+                    <div class="flex items-center gap-2">
+                        <span class="status-dot"></span>
+                        <a href="https://github.com/rudra520" target="_blank" class="text-xs text-gray-500 hover:text-emerald-400 transition-colors mono">@rudra520</a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-4 gap-3 mb-4">
+                    <div class="text-center p-2 rounded-lg bg-black/30 border border-white/5">
+                        <div class="text-xl font-bold text-emerald-400 mono" id="gh-repos">--</div>
+                        <div class="text-[10px] text-gray-500 uppercase tracking-wider">Repos</div>
+                    </div>
+                    <div class="text-center p-2 rounded-lg bg-black/30 border border-white/5">
+                        <div class="text-xl font-bold text-blue-400 mono" id="gh-followers">--</div>
+                        <div class="text-[10px] text-gray-500 uppercase tracking-wider">Followers</div>
+                    </div>
+                    <div class="text-center p-2 rounded-lg bg-black/30 border border-white/5">
+                        <div class="text-xl font-bold text-purple-400 mono" id="gh-following">--</div>
+                        <div class="text-[10px] text-gray-500 uppercase tracking-wider">Following</div>
+                    </div>
+                    <div class="text-center p-2 rounded-lg bg-black/30 border border-white/5">
+                        <div class="text-xl font-bold text-yellow-400 mono" id="gh-stars">--</div>
+                        <div class="text-[10px] text-gray-500 uppercase tracking-wider">Stars</div>
+                    </div>
+                </div>
+
+                <div class="space-y-2 max-h-48 overflow-y-auto pr-1" id="repo-list">
+                    <div class="loading-skeleton h-12 w-full"></div>
+                    <div class="loading-skeleton h-12 w-full"></div>
+                    <div class="loading-skeleton h-12 w-full"></div>
+                </div>
+
+                <div class="mt-3 pt-3 border-t border-white/5 flex justify-between items-center">
+                    <span class="text-[10px] text-gray-600 mono">LIVE_GitHuB : rudra520</span>
+                    <span class="text-[10px] text-emerald-400/60 mono" id="last-updated">Syncing...</span>
+                </div>
+            </div>
+
+            <!-- LinkedIn Profile Card -->
+            <div class="bento-card span-2" id="linkedin" onmousemove="handleMouseMove(event, this)" onmouseleave="handleMouseLeave(this)">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold flex items-center gap-2">
+                        <i data-lucide="linkedin" class="w-5 h-5 text-blue-400"></i>
+                        LinkedIn Chronicle
+                    </h3>
+                    <div class="flex items-center gap-2">
+                        <span class="status-dot" style="background: var(--linkedin);"></span>
+                        <a href="https://www.linkedin.com/in/rudra-pratap-singh-ba6ab637b" target="_blank" class="text-xs text-gray-500 hover:text-blue-400 transition-colors mono">View Profile</a>
+                    </div>
+                </div>
+                
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="w-16 h-16 rounded-xl bg-blue-400/10 border border-blue-400/20 flex items-center justify-center shrink-0 overflow-hidden">
+                        <img src="https://avatars.githubusercontent.com/u/195541218?v=4" class="w-full h-full object-cover opacity-90" alt="Profile">
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold text-white">Rudra Pratap Singh</h4>
+                        <p class="text-sm text-blue-400">AI/ML Engineering Student</p>
+                        <p class="text-xs text-gray-500 mt-1">Uttaranchal Institute of Technology</p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="experience-card">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h5 class="text-sm font-medium text-white">Current Role</h5>
+                                <p class="text-xs text-gray-400 mt-1">Working With Pocket Lawyer | Exploring Generative AI</p>
+                            </div>
+                            <span class="linkedin-tag text-[10px] px-2 py-1 rounded">Present</span>
+                        </div>
+                    </div>
+                    <div class="experience-card">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h5 class="text-sm font-medium text-white">Skills</h5>
+                                <p class="text-xs text-gray-400 mt-1">Python • Java • C | Front-end Development | Certified Web Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 flex gap-2">
+                    <a href="https://www.linkedin.com/in/rudra-pratap-singh-ba6ab637b" target="_blank" class="linkedin-btn px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 transition-all">
+                        <i data-lucide="external-link" class="w-4 h-4"></i>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="bento-card span-2" id="stack" onmousemove="handleMouseMove(event, this)" onmouseleave="handleMouseLeave(this)">
+                <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                    <i data-lucide="cpu" class="w-5 h-5 text-emerald-400"></i>
+                    Tech Arsenal
+                </h3>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-400">Python</span>
+                            <span class="mono text-xs text-emerald-400">45%</span>
+                        </div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="45%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-400">Numpy</span>
+                            <span class="mono text-xs text-emerald-400">60%</span>
+                        </div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="60%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-400">Web Dev</span>
+                            <span class="mono text-xs text-emerald-400">80%</span>
+                        </div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-400">Linux</span>
+                            <span class="mono text-xs text-emerald-400">50%</span>
+                        </div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="50%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-400">Pandas</span>
+                            <span class="mono text-xs text-emerald-400">20%</span>
+                        </div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="20%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1">
+                            <span class="text-gray-400">SQL/NoSQL</span>
+                            <span class="mono text-xs text-emerald-400">30%</span>
+                        </div>
+                        <div class="skill-bar"><div class="skill-fill" data-width="30%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academics Timeline -->
+            <div class="bento-card span-2" id="academics" onmousemove="handleMouseMove(event, this)" onmouseleave="handleMouseLeave(this)">
+                <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+                    <i data-lucide="graduation-cap" class="w-5 h-5 text-emerald-400"></i>
+                    Academic Timeline
+                </h3>
+                
+                <div class="space-y-4">
+                    <div class="timeline-item active">
+                        <div class="flex gap-4 items-start p-3 rounded-lg bg-white/5 border border-white/5 hover:border-blue-400/30 transition-colors -ml-[2px]">
+                            <div class="w-10 h-10 rounded-lg bg-blue-400/10 flex items-center justify-center shrink-0">
+                                <i data-lucide="school" class="w-5 h-5 text-blue-400"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h4 class="font-medium text-sm">B.Tech in AI/ML</h4>
+                                        <p class="text-xs text-gray-400 mt-1">Uttaranchal Institute of Technology</p>
+                                    </div>
+                                    <span class="linkedin-tag text-[10px]">2025 — 2029</span>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-2 leading-relaxed">
+                                    Pursuing Bachelor of Technology in Artificial Intelligence & Machine Learning. 
+                                    Focus areas include Deep Learning, Linear Algebra, Neural Networks, and Cyber Security.
+                                </p>
+                                <div class="flex gap-2 mt-2">
+                                    <span class="text-[10px] px-2 py-0.5 bg-white/5 rounded text-gray-400">GenAI</span>
+                                    <span class="text-[10px] px-2 py-0.5 bg-white/5 rounded text-gray-400">Linear Algebra</span>
+                                    <span class="text-[10px] px-2 py-0.5 bg-white/5 rounded text-gray-400">Neural Networks</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="flex gap-4 items-start p-3 rounded-lg bg-white/5 border border-white/5 hover:border-emerald-400/30 transition-colors -ml-[2px]">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-400/10 flex items-center justify-center shrink-0">
+                                <i data-lucide="award" class="w-5 h-5 text-emerald-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-sm">Certifications & Skills</h4>
+                                <p class="text-xs text-gray-400 mt-1">Self-directed learning & coursework</p>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="tag text-[10px]">Python Advanced</span>
+                                    <span class="tag text-[10px]">Cyber Security</span>
+                                    <span class="tag text-[10px]">IoT Systems</span>
+                                    <span class="tag text-[10px]">Web Development</span>
+                                    <span class="tag text-[10px]">Certified Web Designer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Mission -->
+            <div class="bento-card" onmousemove="handleMouseMove(event, this)" onmouseleave="handleMouseLeave(this)">
+                <h3 class="text-lg font-semibold mb-3 flex items-center gap-2">
+                    <i data-lucide="target" class="w-5 h-5 text-red-400"></i>
+                    Active Mission
+                </h3>
+                <div class="space-y-3">
+                    <div class="p-3 rounded-lg bg-red-400/5 border border-red-400/20">
+                        <h4 class="text-sm font-medium text-red-400 mb-1">AI Shastra</h4>
+                        <p class="text-xs text-gray-400">Democratizing AI through open-source tools and educational content.</p>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-gray-500">
+                        <div class="w-2 h-2 bg-red-400 rounded-full animate-pulse"></div>
+                        <span>In Development</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secret Talent -->
+            <div class="bento-card" onmousemove="handleMouseMove(event, this)" onmouseleave="handleMouseLeave(this)">
+                <h3 class="text-lg font-semibold mb-3 flex items-center gap-2">
+                    <i data-lucide="eye-off" class="w-5 h-5 text-purple-400"></i>
+                    Secret Talent
+                </h3>
+                <p class="text-2xl font-bold text-purple-400 mb-2">Terminal > GUI</p>
+                <p class="text-sm text-gray-400">Can navigate a terminal faster than any graphical interface. Vim motions are my love language.</p>
+                <div class="mt-4 flex gap-2">
+                    <span class="mono text-xs px-2 py-1 bg-purple-400/10 rounded text-purple-400">:wq</span>
+                    <span class="mono text-xs px-2 py-1 bg-purple-400/10 rounded text-purple-400">sudo !!</span>
+                </div>
+            </div>
+
+            <!-- Quote -->
+            <div class="bento-card span-2 bg-emerald-400/5 border-emerald-400/20" onmousemove="handleMouseMove(event, this)" onmouseleave="handleMouseLeave(this)">
+                <div class="h-full flex flex-col justify-center items-center text-center p-4">
+                    <i data-lucide="quote" class="w-8 h-8 text-emerald-400/30 mb-4"></i>
+                    <p class="text-xl md:text-2xl font-light italic text-gray-300 leading-relaxed">
+                        "The best way to predict the future is to <span class="text-emerald-400 font-semibold">invent it</span>."
+                    </p>
+                    <div class="mt-4 w-12 h-px bg-emerald-400/30"></div>
+                    <p class="mt-4 text-sm text-gray-500 mono">// SYSTEM_PHILOSOPHY</p>
+                </div>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="bento-card span-2" onmousemove="handleMouseMove(event, this)" onmouseleave="handleMouseLeave(this)">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Initialize Collaboration</h3>
+                        <p class="text-gray-400 text-sm">Always looking for interesting collaborations in GenAI or Open Source.</p>
+                    </div>
+                    <button onclick="toggleChat()" class="group px-6 py-3 bg-emerald-400 text-black font-bold rounded-lg hover:bg-emerald-300 transition-all flex items-center gap-2">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Start Chat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech News Section -->
+    <section id="news" class="py-20 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 mb-12">
+            <div class="flex items-center justify-between mb-2">
+                <h2 class="text-3xl font-bold">Tech Intelligence Feed</h2>
+                <span class="mono text-xs text-emerald-400/60 border border-emerald-400/20 px-2 py-1 rounded">LIVE_News</span>
+            </div>
+            <p class="text-gray-500 mono text-sm mb-8">// Tech_NEWS_AI</p>
+            
+            <!-- News Ticker -->
+            <div class="news-ticker mb-6 overflow-hidden">
+                <div class="news-scroll" id="news-ticker-content">
+                    <div class="news-item">
+                        <span class="news-dot"></span>
+                        <span class="text-sm text-gray-300 mono">Loading tech news stream...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="news-grid">
+                <div class="loading-skeleton h-32 w-full rounded-xl"></div>
+                <div class="loading-skeleton h-32 w-full rounded-xl"></div>
+                <div class="loading-skeleton h-32 w-full rounded-xl"></div>
+            </div>
+
+            <div class="mt-6 text-center">
+                <button onclick="fetchTechNews()" class="text-xs text-gray-500 hover:text-emerald-400 transition-colors mono flex items-center gap-2 mx-auto">
+                    <i data-lucide="refresh-cw" class="w-3 h-3"></i>
+                    Refresh Feed
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="mono text-sm text-gray-600">
+                <span class="text-emerald-400">rudra@system</span>:<span class="text-blue-400">~</span>$ exit
+            </div>
+            <div class="flex gap-6">
+                <a href="https://github.com/rudra520" target="_blank" class="text-gray-600 hover:text-emerald-400 transition-colors">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/rudra-pratap-singh-ba6ab637b" target="_blank" class="text-gray-600 hover:text-blue-400 transition-colors">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+            </div>
+            <p class="text-xs text-gray-700 mono">Built By Rudra Pratap Singh © 2026</p>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="w-8 h-8 rounded-full bg-emerald-400/20 flex items-center justify-center">
+                    <i data-lucide="bot" class="w-4 h-4 text-emerald-400"></i>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold">KEKO</h4>
+                    <p class="text-xs text-gray-500 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                        Online
+                    </p>
+                </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    Hey! I'm KEKO . Ask me about Rudra's work, tech stack, or his AI Shastra project. I don't bite (unless you're legacy code).
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything..." onkeypress="handleKeyPress(event)">
+                <button class="send-btn" onclick="sendMessage()">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+        <button class="chat-toggle pulse" id="chatToggle" onclick="toggleChat()">
+            <i data-lucide="message-square" class="w-6 h-6"></i>
+        </button>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Language color mapping
+        const langColors = {
+            'Python': '#3572A5',
+            'JavaScript': '#f1e05a',
+            'TypeScript': '#3178c6',
+            'HTML': '#e34c26',
+            'C': '#555555',
+            'C++': '#f34b7d',
+            'Java': '#b07219',
+            'CSS': '#563d7c',
+            'Shell': '#89e051'
+        };
+
+        // LIVE GITHUB API INTEGRATION
+        async function fetchGitHubData() {
+            try {
+                const userRes = await fetch('https://api.github.com/users/rudra520');
+                const user = await userRes.json();
+
+                const reposRes = await fetch('https://api.github.com/users/rudra520/repos?sort=updated&per_page=8');
+                const repos = await reposRes.json();
+
+                document.getElementById('gh-repos').textContent = user.public_repos;
+                document.getElementById('gh-followers').textContent = user.followers;
+                document.getElementById('gh-following').textContent = user.following;
+                
+                const totalStars = repos.reduce((acc, repo) => acc + repo.stargazers_count, 0);
+                document.getElementById('gh-stars').textContent = totalStars;
+
+                document.getElementById('gh-avatar').src = user.avatar_url;
+
+                const repoList = document.getElementById('repo-list');
+                repoList.innerHTML = '';
+
+                repos.forEach(repo => {
+                    const langColor = langColors[repo.language] || '#8b949e';
+                    const updated = new Date(repo.updated_at).toLocaleDateString('en-US', { 
+                        month: 'short', day: 'numeric' 
+                    });
+
+                    const repoEl = document.createElement('a');
+                    repoEl.href = repo.html_url;
+                    repoEl.target = '_blank';
+                    repoEl.className = 'repo-card block group';
+                    repoEl.innerHTML = `
+                        <div class="flex items-start justify-between mb-1">
+                            <h4 class="text-sm font-medium text-gray-200 group-hover:text-emerald-400 transition-colors truncate pr-2">
+                                ${repo.name}
+                            </h4>
+                            <div class="flex items-center gap-1 text-xs text-gray-500 shrink-0">
+                                <i data-lucide="star" class="w-3 h-3"></i>
+                                ${repo.stargazers_count}
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 line-clamp-1 mb-2">${repo.description || 'No description available'}</p>
+                        <div class="flex items-center justify-between text-[10px] text-gray-600 mono">
+                            <div class="flex items-center gap-1.5">
+                                <span class="lang-dot" style="background:${langColor}"></span>
+                                <span>${repo.language || 'N/A'}</span>
+                            </div>
+                            <span>${updated}</span>
+                        </div>
+                    `;
+                    repoList.appendChild(repoEl);
+                });
+
+                lucide.createIcons();
+
+                document.getElementById('last-updated').textContent = 'Synced: ' + new Date().toLocaleTimeString();
+
+            } catch (error) {
+                console.error('GitHub API Error:', error);
+                document.getElementById('repo-list').innerHTML = `
+                    <div class="p-4 text-center text-xs text-red-400 mono">
+                        <i data-lucide="alert-triangle" class="w-4 h-4 mx-auto mb-2"></i>
+                        API Rate Limited. Try again later.
+                    </div>
+                `;
+                lucide.createIcons();
+            }
+        }
+
+        fetchGitHubData();
+        setInterval(fetchGitHubData, 300000);
+
+        // TECH NEWS API — Actually Relevant (No API Key Required)
+        async function fetchTechNews() {
+            try {
+                // Using Actually Relevant API — free, no key, curated tech news
+                const response = await fetch('https://actually-relevant-api.onrender.com/api/stories?issueSlug=science-technology');
+                const data = await response.json();
+                
+                const stories = data.stories || data || [];
+                const techStories = stories.slice(0, 6);
+
+                // Update Ticker
+                const ticker = document.getElementById('news-ticker-content');
+                const tickerItems = techStories.map(story => `
+                    <div class="news-item" onclick="window.open('${story.url}', '_blank')">
+                        <span class="news-dot"></span>
+                        <span class="text-sm text-gray-300">${story.headline || story.title}</span>
+                        <span class="text-xs text-gray-600 mono ml-2">${story.source || 'Tech'}</span>
+                    </div>
+                `).join('');
+                
+                // Duplicate for seamless loop
+                ticker.innerHTML = tickerItems + tickerItems;
+
+                // Update Grid
+                const grid = document.getElementById('news-grid');
+                grid.innerHTML = techStories.map((story, i) => `
+                    <div class="news-card group cursor-pointer" onclick="window.open('${story.url}', '_blank')">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="news-source">${story.source || 'TECH'}</span>
+                            <span class="news-time">${new Date(story.publishedAt || Date.now()).toLocaleDateString()}</span>
+                        </div>
+                        <h4 class="text-sm font-medium text-gray-200 group-hover:text-emerald-400 transition-colors line-clamp-2 mb-2">
+                            ${story.headline || story.title}
+                        </h4>
+                        <p class="text-xs text-gray-500 line-clamp-2 mb-3">
+                            ${story.summary || story.description || 'Click to read full story...'}
+                        </p>
+                        <div class="flex items-center gap-2 text-[10px] text-gray-600 mono">
+                            <span class="tag text-[10px]">${story.issueArea || 'Technology'}</span>
+                            <span class="ml-auto flex items-center gap-1 group-hover:text-emerald-400 transition-colors">
+                                Read <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                            </span>
+                        </div>
+                    </div>
+                `).join('');
+
+                lucide.createIcons();
+
+            } catch (error) {
+                console.error('News API Error:', error);
+                // Fallback to static tech headlines if API fails
+                const fallbackNews = [
+                    { title: 'AI Shastra: Democratizing Machine Learning for Everyone', source: 'Open Source', date: 'Just now', tag: 'AI/ML' },
+                    { title: 'The Rise of Generative AI in Modern Web Development', source: 'Tech Daily', date: '2h ago', tag: 'GenAI' },
+                    { title: 'Cyber Security Trends: Zero Trust Architecture in 2026', source: 'Security Weekly', date: '5h ago', tag: 'Security' },
+                    { title: 'Python vs Java: Which Reigns Supreme for AI Development?', source: 'Dev.to', date: '1d ago', tag: 'Programming' },
+                    { title: 'ESP32 & Arduino: Building IoT Systems from Scratch', source: 'Hardware', date: '1d ago', tag: 'IoT' },
+                    { title: 'Front-end Evolution: From React to Next-Gen Frameworks', source: 'Web Dev', date: '2d ago', tag: 'Web' }
+                ];
+
+                const ticker = document.getElementById('news-ticker-content');
+                const tickerItems = fallbackNews.map(n => `
+                    <div class="news-item">
+                        <span class="news-dot"></span>
+                        <span class="text-sm text-gray-300">${n.title}</span>
+                        <span class="text-xs text-gray-600 mono ml-2">${n.source}</span>
+                    </div>
+                `).join('');
+                ticker.innerHTML = tickerItems + tickerItems;
+
+                const grid = document.getElementById('news-grid');
+                grid.innerHTML = fallbackNews.map(n => `
+                    <div class="news-card group">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="news-source">${n.source.toUpperCase()}</span>
+                            <span class="news-time">${n.date}</span>
+                        </div>
+                        <h4 class="text-sm font-medium text-gray-200 group-hover:text-emerald-400 transition-colors line-clamp-2 mb-2">
+                            ${n.title}
+                        </h4>
+                        <div class="flex items-center gap-2 text-[10px] text-gray-600 mono">
+                            <span class="tag text-[10px]">${n.tag}</span>
+                        </div>
+                    </div>
+                `).join('');
+                
+                lucide.createIcons();
+            }
+        }
+
+        // Load news on page load
+        fetchTechNews();
+        // Refresh every 10 minutes
+        setInterval(fetchTechNews, 600000);
+
+        // Mouse tracking
+        function handleMouseMove(e, card) {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        }
+
+        function handleMouseLeave(card) {
+            card.style.setProperty('--mouse-x', '0px');
+            card.style.setProperty('--mouse-y', '0px');
+        }
+
+        // Skill bars
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const fills = entry.target.querySelectorAll('.skill-fill');
+                    fills.forEach(fill => {
+                        fill.style.width = fill.getAttribute('data-width');
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.bento-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Typewriter
+        const texts = [
+            "Developing AI Shastra to democratize machine learning...",
+            "Exploring vulnerabilities in the digital world...",
+            "Can navigate a terminal faster than a GUI...",
+            "Ask me about Python, AI, or Web Security..."
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriter = document.getElementById('typewriter');
+
+        function type() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typewriter.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriter.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentText.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        type();
+
+        // Chatbot
+        const chatWindow = document.getElementById('chatWindow');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const chatToggle = document.getElementById('chatToggle');
+        let isChatOpen = false;
+
+        function toggleChat() {
+            isChatOpen = !isChatOpen;
+            chatWindow.classList.toggle('active', isChatOpen);
+            chatToggle.classList.remove('pulse');
+            if (isChatOpen) {
+                setTimeout(() => chatInput.focus(), 300);
+            }
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function sendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            addMessage(text, 'user');
+            chatInput.value = '';
+
+            setTimeout(() => {
+                const response = getBotResponse(text.toLowerCase());
+                addMessage(response, 'bot');
+            }, 600 + Math.random() * 400);
+        }
+
+        function addMessage(text, sender) {
+            const div = document.createElement('div');
+            div.className = `message ${sender}`;
+            div.textContent = text;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function getBotResponse(input) {
+            const responses = {
+                'hello': "Hey there! Ready to dive into Rudra's digital universe?",
+                'hi': "Greetings! What would you like to know about Rudra?",
+                'who': "Rudra Pratap Singh is an AI/ML Engineering Student at Uttaranchal Institute of Technology. He bridges human logic and machine intelligence, working with Pocket Lawyer while exploring Generative AI.",
+                'work': "Rudra is currently developing AI Shastra — an initiative to democratize machine learning. He's also working with Pocket Lawyer and exploring Generative AI applications.",
+                'project': "His flagship project is AI Shastra. Think of it as the open-source gateway to machine learning for everyone. He's also active in web security and open-source contributions.",
+                'ai shastra': "AI Shastra is Rudra's brainchild — a project aimed at democratizing ML. It's built on the philosophy that AI should be accessible, not guarded behind paywalls.",
+                'tech': "Rudra's arsenal includes Python, Java, C, TensorFlow, React, Node.js, and various security tools. He's also a Certified Web Designer.",
+                'stack': "Primary stack: Python (AI/ML), JavaScript/TypeScript (Web), C/C++ (Systems), SQL/NoSQL (Data). Security: Kali Linux, custom scripts.",
+                'contact': "You can reach Rudra via GitHub (@rudra520) or LinkedIn. He's always open to collaborations in GenAI or Open Source!",
+                'github': "Check out github.com/rudra520 for his open-source work. He has 8 public repos including AI-Sastra, Python experiments, and Web-Dev projects.",
+                'linkedin': "His LinkedIn profile: linkedin.com/in/rudra-pratap-singh-ba6ab637b. He's an AI/ML Engineering Student at Uttaranchal Institute of Technology.",
+                'education': "Rudra is pursuing B.Tech in AI/ML at Uttaranchal Institute of Technology (2025-2029). Focus areas: Deep Learning, Linear Algebra, Neural Networks, Cyber Security.",
+                'college': "Uttaranchal Institute of Technology — B.Tech AI/ML (2025-2029)",
+                'university': "Uttaranchal Institute of Technology — B.Tech AI/ML (2025-2029)",
+                'skill': "Top skills: Python (95%), Linux/Unix (92%), Deep Learning (88%), Web Security (85%), Full-stack Dev (80%). Certified Web Designer.",
+                'security': "Rudra explores digital vulnerabilities and hardens web applications. He believes the best defense is understanding the offense.",
+                'python': "Python is Rudra's weapon of choice for AI/ML. He'll tell you why it rules the AI kingdom — ecosystem, readability, and community.",
+                'java': "Java is part of Rudra's core programming arsenal. He uses it for backend systems and Android development alongside Python.",
+                'c': "C is in Rudra's toolkit for systems-level programming and understanding computer architecture at a fundamental level.",
+                'terminal': "Fun fact: Rudra can navigate a terminal faster than a GUI. Vim is his editor of choice, and bash scripts are his poetry.",
+                'hobby': "When not coding, he's probably exploring new AI research papers, CTF challenges, or optimizing his dotfiles.",
+                'help': "Try asking about: who, work, projects, tech stack, AI Shastra, education, contact, github, skills, or security.",
+                'default': "Interesting question! Rudra is probably the best person to answer that directly. Want his contact info?"
+            };
+
+            for (let key in responses) {
+                if (input.includes(key)) return responses[key];
+            }
+            return responses['default'];
+        }
+
+        // Particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Parallax
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.grid-bg');
+            parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    </script>
+</body>
+</html>
