@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:42A5F5,100:7C4DFF&height=200&section=header&text=Rudra%20Pratap%20Singh&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=AI%20%26%20ML%20Engineer%20%7C%20Full%20Stack%20Developer%20%7C%20Cybersecurity%20Enthusiast&descAlignY=55&descSize=18" width="100%"/>
-</p>
-
 <!-- Typing Animation (static marquee style) -->
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=42A5F5&center=true&vCenter=true&width=600&lines=Building+AI+Shastra+%F0%9F%A4%96;Training+Neural+Networks+%F0%9F%A7%A0;Securing+the+Digital+World+%F0%9F%9B%A1%EF%B8%8F;Terminal+%3E%3E%3E+GUI+%F0%9F%92%BB" alt="Typing Animation" />
