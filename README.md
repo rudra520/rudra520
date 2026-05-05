@@ -102,4 +102,3 @@ Portfolio 3.0 Next‑gen portfolio with kinetic typography & terminal integratio
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7C4DFF,100:42A5F5&height=100&section=footer" width="100%" />
 </p>
-```
