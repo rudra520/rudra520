@@ -3,26 +3,24 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:42A5F5,100:7C4DFF&height=200&section=header&text=Rudra%20Pratap%20Singh&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=AI%20%26%20ML%20Engineer%20%7C%20Full%20Stack%20Developer%20%7C%20Cybersecurity%20Enthusiast&descAlignY=55&descSize=18" width="100%"/>
 </p>
 
-<!-- Typing Animation -->
+<!-- Typing Animation (static marquee style) -->
 <p align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=42A5F5&center=true&vCenter=true&width=600&lines=Building+AI+Shastra+%F0%9F%A4%96;Training+Neural+Networks+%F0%9F%A7%A0;Securing+the+Digital+World+%F0%9F%9B%A1%EF%B8%8F;Terminal+%3E%3E%3E+GUI+%F0%9F%92%BB" alt="Typing Animation" />
-  </a>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=42A5F5&center=true&vCenter=true&width=600&lines=Building+AI+Shastra+%F0%9F%A4%96;Training+Neural+Networks+%F0%9F%A7%A0;Securing+the+Digital+World+%F0%9F%9B%A1%EF%B8%8F;Terminal+%3E%3E%3E+GUI+%F0%9F%92%BB" alt="Typing Animation" />
 </p>
 
 <!-- Social Badges -->
 <p align="center">
   <a href="https://www.linkedin.com/in/rudra-pratap-singh-ba6ab637b">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&logoWidth=20" alt="LinkedIn"/>
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
   <a href="https://x.com/RudraPrata66568">
-    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white&logoWidth=20" alt="Twitter"/>
+    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"/>
   </a>
   <a href="mailto:rudra222000@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white&logoWidth=20" alt="Gmail"/>
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
   </a>
   <a href="https://rudra520.netlify.app/">
-    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white&logoWidth=20" alt="Portfolio"/>
+    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white" alt="Portfolio"/>
   </a>
   <a href="https://github.com/rudra520?tab=followers">
     <img src="https://img.shields.io/github/followers/rudra520?label=Followers&style=for-the-badge&color=42A5F5&labelColor=1a1a1a" alt="GitHub Followers"/>
@@ -45,11 +43,11 @@ Current_Focus:
 Secret_Talent: Terminal navigation speed > GUI
 ```
 
-> *"The best way to predict the future is to invent it."*
+"The best way to predict the future is to invent it."
 
 ---
 
-## 🛠️ Tech Stack Matrix
+🛠️ Tech Stack Matrix
 
 <details open>
 <summary><b>🤖 Artificial Intelligence & Data Science</b></summary>
@@ -93,40 +91,31 @@ Secret_Talent: Terminal navigation speed > GUI
 </details>
 
 <details open>
-<summary><b>🗄️ Databases</b></summary>
+<summary><b>🗄️ Databases & Languages</b></summary>
 <br>
 <p align="left">
   <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
   <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite"/>
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB"/>
   <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis"/>
-</p>
-</details>
-
-<details open>
-<summary><b>💻 Programming Languages</b></summary>
-<br>
-<p align="left">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
   <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C"/>
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
   <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++"/>
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java"/>
   <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go"/>
 </p>
 </details>
 
 ---
 
-## 🚀 Featured Projects
+🚀 Featured Projects
 
-| Project | Description | Tech Stack | Status |
-|---------|-------------|------------|--------|
-| **[AI Shastra](https://github.com/rudra520/AI-Sastra-)** | Democratizing Machine Learning for everyone | Python, TensorFlow, React | 🚧 In Progress |
-| **[Portfolio](https://rudra520.netlify.app/)** | Personal developer portfolio & blog | Next.js, Tailwind CSS | ✅ Live |
+Project Description Tech Stack Status
+AI Shastra Democratizing Machine Learning for everyone – interactive courses, model playground, MLOps toolkit Python, TensorFlow, React 🚧 In Progress
+Portfolio 3.0 Next‑gen personal portfolio & blog with kinetic typography, terminal integration Next.js, Tailwind CSS, Framer ✅ Live
 
 ---
 
-## 📊 GitHub Analytics
+📊 GitHub Analytics
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=rudra520&show_icons=true&theme=radical&count_private=true&hide_border=true&bg_color=0d1117&title_color=42A5F5&icon_color=7C4DFF&text_color=c9d1d9" width="49%" alt="GitHub Stats"/>
@@ -143,7 +132,7 @@ Secret_Talent: Terminal navigation speed > GUI
 
 ---
 
-## 🏆 GitHub Trophies
+🏆 GitHub Trophies
 
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=rudra520&theme=radical&no-frame=true&no-bg=true&margin-w=4&row=1" width="100%" alt="GitHub Trophies"/>
@@ -151,7 +140,7 @@ Secret_Talent: Terminal navigation speed > GUI
 
 ---
 
-## 💬 Let's Connect
+💬 Let's Connect
 
 <p align="center">
   <a href="https://www.linkedin.com/in/rudra-pratap-singh-ba6ab637b">
@@ -166,7 +155,8 @@ Secret_Talent: Terminal navigation speed > GUI
   <i>Always open for collaborations in GenAI, Open Source, and Security Research.</i>
 </p>
 
-<!-- Footer -->
+<!-- Footer Views & Wave -->
+
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=rudra520&label=Profile%20Views&color=42A5F5&style=flat-square" alt="Profile Views"/>
 </p>
