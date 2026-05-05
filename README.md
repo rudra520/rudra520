@@ -56,7 +56,7 @@ Portfolio 3.0 Next‑gen portfolio with kinetic typography & terminal integratio
 
 ---
 
-🏆 Simple Achievements
+ 🎯 Target 
 
 <p align="center">
   <img src="https://img.shields.io/badge/🚀_Launched_AI_Shastra_Beta-42A5F5?style=for-the-badge" /> &nbsp;
