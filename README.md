@@ -74,9 +74,7 @@ Portfolio 3.0 Next‑gen portfolio with kinetic typography & terminal integratio
 📊 GitHub Analytics
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=rudra520&show_icons=true&theme=radical&count_private=true&hide_border=true&bg_color=0d1117&title_color=42A5F5&icon_color=7C4DFF&text_color=c9d1d9" width="49%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rudra520&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=42A5F5&text_color=c9d1d9" width="49%" />
-</p>
+  
 
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=rudra520&theme=radical&hide_border=true&background=0d1117&stroke=42A5F5&ring=7C4DFF&fire=FF6B6B&currStreakLabel=42A5F5" width="100%" />
