@@ -113,7 +113,7 @@ GitHub Status:    ✅ Open to Collaborations
 
 ---
 
-## 📊 GitHub Analytics
+## 📊 GitHub Analytics.
 
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=rudra520&theme=radical&hide_border=true&background=0d1117&stroke=42A5F5&ring=7C4DFF&fire=FF6B6B&currStreakLabel=42A5F5" width="100%" alt="GitHub Streak" />
