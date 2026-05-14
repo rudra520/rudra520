@@ -1,6 +1,6 @@
 <!-- Animated Header with Name and Title -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&pause=1000&color=42A5F5&center=true&vCenter=true&width=700&lines=Rudra+Pratap+Singh;Data+Scientist+%7C+AI+Engineer;Building+AI+Shastra+%F0%9F%A4%96;Innovating+with+Deep+Learning" alt="Typing animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&pause=1000&color=42A5F5&center=true&vCenter=true&width=700&lines=Rudra+Pratap+Singh;Data+Scientist+%7C+AI+Engineer;Building+AI+Shastra+%F0%9F%A4%96;Innovating+with+Machine+Learning" alt="Typing animation" />
 </p>
 
 <!-- Social Media Badges -->
