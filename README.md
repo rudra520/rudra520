@@ -1,6 +1,6 @@
 <!-- Animated Header with Name and Title -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&pause=1000&color=42A5F5&center=true&vCenter=true&width=700&lines=Rudra+Pratap+Singh;Data+Scientist+%7C+AI+Engineer;Building+AI+Shastra+%F0%9F%A4%96;Innovating+with+Machine+Learning" alt="Typing animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&pause=1000&color=42A5F5&center=true&vCenter=true&width=700&lines=Rudra+Pratap+Singh;Data+Scientist+%7C+AI+Engineer;ML+Researcher;Security+Enthusiast" alt="Typing SVG" />
 </p>
 
 <!-- Social Media Badges -->
@@ -28,7 +28,7 @@
 
 **Rudra Pratap Singh** | *Data Scientist & AI Engineer*
 
-I'm passionate about building intelligent systems, conducting security research, and democratizing machine learning through **AI Shastra**. My journey combines deep learning expertise with a commitment to open-source innovation and making cutting-edge AI accessible to everyone.
+I'm passionate about building intelligent systems, conducting security research, and democratizing machine learning through **AI Shastra**. My journey combines deep learning expertise with a commitment to open-source innovation and ethical hacking.
 
 ### 🎯 Quick Facts
 
@@ -41,7 +41,8 @@ Focus Areas:      • Deep Learning & Neural Networks
                   • Linear Algebra for ML
                   • Web App Security
                   • Generative AI
-Status:           🚀 Always Learning & Building
+Status:           🚀 Actively Building & Contributing
+GitHub Status:    ✅ Open to Collaborations
 ```
 
 ---
@@ -115,12 +116,12 @@ Status:           🚀 Always Learning & Building
 ## 📊 GitHub Analytics
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=rudra520&theme=radical&hide_border=true&background=0d1117&stroke=42A5F5&ring=7C4DFF&fire=FF6B6B&currStreakLabel=42A5F5" width="100%" alt="GitHub Streak Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=rudra520&theme=radical&hide_border=true&background=0d1117&stroke=42A5F5&ring=7C4DFF&fire=FF6B6B&currStreakLabel=42A5F5" width="100%" alt="GitHub Streak" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=rudra520&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=42A5F5&icon_color=42A5F5&text_color=ffffff" width="48%" alt="GitHub Stats"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rudra520&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=42A5F5&text_color=42A5F5" width="48%" alt="Top Languages"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=rudra520&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=42A5F5&icon_color=42A5F5&text_color=ffffff" width="48%" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rudra520&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=42A5F5&text_color=42A5F5&langs_count=8" width="48%" alt="Top Languages" />
 </p>
 
 ---
@@ -166,5 +167,5 @@ Status:           🚀 Always Learning & Building
 </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7C4DFF,100:42A5F5&height=100&section=footer&text=Happy%20Coding!&fontSize=20&fontColor=ffffff" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7C4DFF,100:42A5F5&height=100&section=footer&text=Happy%20Coding!&fontSize=20&fontColor=ffffff" width="100%" alt="Footer" />
 </p>
