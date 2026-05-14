@@ -119,8 +119,8 @@ Status:           🚀 Always Learning & Building
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=rudra520&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=42A5F5&icon_color=42A5F5&text_color=ffffff" width="48%" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rudra520&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=42A5F5&text_color=42A5F5" width="48%" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api?username=rudra520&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=42A5F5&icon_color=42A5F5&text_color=ffffff" width="48%" alt="GitHub Stats"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rudra520&layout=compact&theme=radical&hide_border=true&bg_color=0d1117&title_color=42A5F5&text_color=42A5F5" width="48%" alt="Top Languages"/>
 </p>
 
 ---
