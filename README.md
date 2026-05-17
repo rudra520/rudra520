@@ -146,8 +146,6 @@ GitHub Status:    ✅ Open to Collaborations
 <br>
 
 ### I'm Open For:
-- 🤖 **Generative AI Projects** – LLMs, RAG systems, prompt engineering
-- 🔬 **Machine Learning Research** – Deep learning, neural networks, optimization
 - 🔐 **Security Research** – Vulnerability disclosure, ethical hacking
 - 📚 **Open Source Contributions** – Building tools for the ML community
 - 💼 **Collaborations & Partnerships** – AI Shastra ecosystem expansion
