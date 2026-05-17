@@ -128,6 +128,7 @@ GitHub Status:    ✅ Open to Collaborations
 <p align="center">
   <img src="https://img.shields.io/badge/Pull%20Shark%20🦈-Merged%20500%2B%20Pull%20Requests-0366d6?style=for-the-badge&logo=github&logoColor=white" alt="Pull Shark Badge" />
 </p>
+
 ---
 
 ## 📊 GitHub Analytics
