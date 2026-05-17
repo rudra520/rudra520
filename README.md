@@ -110,12 +110,12 @@ GitHub Status:    ✅ Open to Collaborations
 
 <i>
 
-              ✨ SOAR AI to Acquire ✨
-            ✨ Open Source Contributor ✨ 
-           ✨ Drone Software Technician ✨
-         ✨ Web Designing and Development ✨
-      ✨ Best performance at HaXplore Event ✨
-          ✨ (IIT BHU - CodeFest'26) ✨
+                ✨ SOAR AI to Acquire ✨
+              ✨ Open Source Contributor ✨ 
+             ✨ Drone Software Technician ✨
+           ✨ Web Designing and Development ✨
+         ✨ Best performance at HaXplore Event ✨
+              ✨ (IIT BHU - CodeFest'26) ✨
 
 </i>
 
