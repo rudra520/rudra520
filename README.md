@@ -109,11 +109,11 @@ GitHub Status:    ✅ Open to Collaborations
 ### 📜 Certifications & Recognition
 <p align="center">
   <i>
-✨ 
+
 ✨Drone Software Technician✨
 
 ✨Open Source Contributor✨ 
-✨
+
 </i>
 </p>
 
