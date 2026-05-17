@@ -110,10 +110,12 @@ GitHub Status:    ✅ Open to Collaborations
 
   <i>
 
-        ✨Drone Software Technician✨
-           ✨SOAR AI to Acquire✨
-         ✨Open Source Contributor✨ 
-      ✨Web Designing and Development ✨
+             
+                 ✨SOAR AI to Acquire✨
+               ✨Open Source Contributor✨ 
+              ✨Drone Software Technician✨
+            ✨Web Designing and Development ✨
+             
 </i>
 
 
