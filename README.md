@@ -1,6 +1,6 @@
 <!-- Animated Header with Name and Title -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&pause=1000&color=42A5F5&center=true&vCenter=true&width=700&lines=Rudra+Pratap+Singh;Data+Scientist+%7C+AI+Engineer;ML+Researcher;Security+Enthusiast" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&pause=1000&color=42A5F5&center=true&vCenter=true&width=700&lines=Rudra+Pratap+Singh;Data+Scientist+%7C+AI+Engineer;Building+Intelligent+Systems" alt="Typing SVG" />
 </p>
 
 <!-- Social Media Badges -->
@@ -28,7 +28,7 @@
 
 **Rudra Pratap Singh** | *Data Scientist & AI Engineer*
 
-I'm passionate about building intelligent systems, conducting security research, and democratizing machine learning through **AI Shastra**. My journey combines deep learning expertise with a commitment to open-source innovation and ethical hacking.
+I'm passionate about building intelligent systems, conducting security research, and democratizing machine learning through **AI Shastra**. My journey combines deep learning expertise with a commitment to open-source innovation and ethical security practices.
 
 ### 🎯 Quick Facts
 
@@ -108,25 +108,38 @@ GitHub Status:    ✅ Open to Collaborations
 
 ### 📜 Certifications & Recognition
 
-  <i>
+<i>
 
-             
-                 ✨SOAR AI to Acquire✨
-               ✨Open Source Contributor✨ 
-              ✨Drone Software Technician✨
-            ✨Web Designing and Development✨
-          ✨Best performance at HaXplore Event✨
-               ✨ (IIT BHU-Codefest'26 )✨
-             
+   ✨ SOAR AI to Acquire ✨
+   ✨ Open Source Contributor ✨ 
+   ✨ Drone Software Technician ✨
+   ✨ Web Designing and Development ✨
+   ✨ Best performance at HaXplore Event ✨
+   ✨ (IIT BHU - CodeFest'26) ✨
+
 </i>
 
+---
+
+## 🏆 Achievements
+
+### GitHub Achievements
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Pull%20Shark%20🦈-Merged%20500%2B%20Pull%20Requests-0366d6?style=for-the-badge&logo=github&logoColor=white" alt="Pull Shark Badge" />
+</p>
+
+### Competitions & Recognition
+
+- **🥈 CodeFest'26 Runner-Up** - IIT BHU (2026)
+- **⭐ Best Performer - HaXplore Event** - IIT BHU CodeFest'26
 
 ---
 
 ## 📊 GitHub Analytics
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=rudra520&theme=radical&hide_border=true&background=0d1117&stroke=42A5F5&ring=7C4DFF&fire=FF6B6B&currStreakLabel=42A5F5" width="100%" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=rudra520&theme=radical&hide_border=true&background=0d1117&stroke=42A5F5&ring=7C4DFF&fire=FF6B6B&currStreakLabel=42A5F5" width="100%" alt="GitHub Streak Stats" />
 </p>
 
 ---
