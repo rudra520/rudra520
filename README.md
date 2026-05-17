@@ -114,7 +114,9 @@ GitHub Status:    ✅ Open to Collaborations
                  ✨SOAR AI to Acquire✨
                ✨Open Source Contributor✨ 
               ✨Drone Software Technician✨
-            ✨Web Designing and Development ✨
+            ✨Web Designing and Development✨
+          ✨Best performance at HaXplore Event✨
+               ✨ (IIT BHU-Codefest'26 )✨
              
 </i>
 
