@@ -108,7 +108,12 @@ GitHub Status:    ✅ Open to Collaborations
 
 ### 📜 Certifications & Recognition
 <p align="center">
-  <i>✨ Certified Ethical Hacker (in progress) • Google ML Bootcamp Scholar • Open Source Contributor ✨</i>
+  <i>
+✨ 
+✨Drone Software Technician✨
+✨Open Source Contributor✨ 
+✨
+</i>
 </p>
 
 ---
