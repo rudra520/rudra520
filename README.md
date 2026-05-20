@@ -152,7 +152,6 @@ GitHub Status:    ✅ Open to Collaborations
 ### Get In Touch:
 - 📧 **Email:** [rudra222000@gmail.com](mailto:rudra222000@gmail.com)
 - 🔗 **LinkedIn:** [Rudra Pratap Singh](https://www.linkedin.com/in/rudra-pratap-singh-ba6ab637b)
-- 🐦 **Twitter/X:** [@RudraPrata66568](https://x.com/RudraPrata66568)
 - 🌐 **Portfolio:** [rudra520.netlify.app](https://rudra520.netlify.app/)
 
 </details>
