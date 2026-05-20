@@ -180,19 +180,19 @@ I'm a **Data Scientist & AI Engineer** from India passionate about:
 
 
 ---
-
 ## 📊 GitHub Statistics
 
 <div align="center">
 
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=rudra520&theme=radical&hide_border=true&background=0d1117&stroke=42A5F5&ring=7C4DFF&fire=FF6B6B&currStreakLabel=42A5F5)
+<!-- Fixed: Updated to the new working domain -->
+![GitHub Streak](https://streak-stats.demolab.com/?user=rudra520&theme=radical&hide_border=true&background=0d1117&stroke=42A5F5&ring=7C4DFF&fire=FF6B6B&currStreakLabel=42A5F5)
 
-![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rudra520&theme=radical&hide_border=true&layout=compact)
+<!-- Fixed: Added a cache-control parameter to help bypass severe rate limits -->
+![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rudra520&theme=radical&hide_border=true&layout=compact&cache_seconds=86400)
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rudra520&theme=radical&hide_border=true&show_icons=true&count_private=true)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rudra520&theme=radical&hide_border=true&show_icons=true&count_private=true&cache_seconds=86400)
 
 </div>
-
 ---
 
 ## 🎯 Current Focus
