@@ -1,6 +1,6 @@
 <!-- Animated Header with Name and Title -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&pause=1000&color=42A5F5&center=true&vCenter=true&width=700&lines=Rudra+Pratap+Singh;Data+Scientist+%7C+AI+Engineer;Building+Intelligent+Systems" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&pause=1000&color=42A5F5&center=true&vCenter=true&width=700&lines=Rudra+Pratap+Singh;Data+Scientist+%7C+AI+Engineer;Security+Research+%7C+Open+Source" alt="Animated Name" />
 </p>
 
 <!-- Social Media Badges -->
@@ -28,7 +28,7 @@
 
 **Rudra Pratap Singh** | *Data Scientist & AI Engineer*
 
-I'm passionate about building intelligent systems, conducting security research, and democratizing machine learning through **AI Shastra**. My journey combines deep learning expertise with a commitment to open-source innovation and ethical security practices.
+I'm passionate about building intelligent systems, conducting security research, and democratizing machine learning through **AI Shastra**. My journey combines deep learning expertise with a commitment to ethical innovation and open-source development.
 
 ### 🎯 Quick Facts
 
@@ -93,7 +93,6 @@ GitHub Status:    ✅ Open to Collaborations
 |---------|-------------|-----------|--------|
 | **AI Shastra** | Democratizing ML with interactive courses, model playground & MLOps toolkit | Python, TensorFlow, React | 🚧 In Progress |
 | **Portfolio 3.0** | Next-gen portfolio with kinetic typography & terminal integration | Next.js, Tailwind, Framer | ✅ Live |
-| **Security Research** | Ethical hacking & vulnerability discoveries | Kali Linux, Python | 🔍 Active |
 
 ---
 
@@ -134,7 +133,7 @@ GitHub Status:    ✅ Open to Collaborations
 ## 📊 GitHub Analytics
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=rudra520&theme=radical&hide_border=true&background=0d1117&stroke=42A5F5&ring=7C4DFF&fire=FF6B6B&currStreakLabel=42A5F5" width="100%" alt="GitHub Streak Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=rudra520&theme=radical&hide_border=true&background=0d1117&stroke=42A5F5&ring=7C4DFF&fire=FF6B6B&currStreakLabel=42A5F5" width="100%" alt="GitHub Streak" />
 </p>
 
 ---
