@@ -34,12 +34,11 @@ I'm passionate about building intelligent systems, conducting security research,
 
 ```yaml
 Name:             Rudra Pratap Singh
-Role:             Data Scientist | AI Engineer
-Mission:          Democratize ML via AI Shastra
+Role:             Data Scientist | AI Engineer 
 Location:         India
 Focus Areas:      • Deep Learning & Neural Networks
                   • Linear Algebra for ML
-                  • Web App Security
+                  • Web Dev
                   • Generative AI
 Status:           🚀 Actively Building & Contributing
 GitHub Status:    ✅ Open to Collaborations
@@ -92,7 +91,7 @@ GitHub Status:    ✅ Open to Collaborations
 | Project | Description | Tech Stack | Status |
 |---------|-------------|-----------|--------|
 | **AI Shastra** | Democratizing ML with interactive courses, model playground & MLOps toolkit | Python, TensorFlow, React | 🚧 In Progress |
-| **Portfolio 3.0** | Next-gen portfolio with kinetic typography & terminal integration | Next.js, Tailwind, Framer | ✅ Live |
+| **Portfolio v4.** | Next-gen portfolio with kinetic typography & terminal integration | Next.js, Tailwind, Framer | ✅ Live |
 
 ---
 
@@ -113,7 +112,8 @@ GitHub Status:    ✅ Open to Collaborations
               ✨ Open Source Contributor ✨ 
              ✨ Drone Software Technician ✨
            ✨ Web Designing and Development ✨
-         ✨ Best performance at HaXplore Event ✨
+           ✨ Software Test Engineer(Beginner)✨
+          ✨ Best performance at HaXplore Event ✨
               ✨ (IIT BHU - CodeFest'26) ✨
 
 </i>
