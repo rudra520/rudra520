@@ -165,21 +165,19 @@ I'm a **Data Scientist & AI Engineer** from India passionate about:
 
 | Certification | Issued By | Year |
 |---|---|---|
-| 🤖 SOAR AI to Acquire | - | 2024 |
-| 🌐 Web Designing and Development | - | 2023 |
-| 🔍 Software Test Engineer (Beginner) | - | 2023 |
-| 🛸 Drone Software Technician | - | 2023 |
-| 🏅 Open Source Contributor | GitHub | Ongoing |
+| 🤖 SOAR AI to Acquire | Microsoft | 2026 |
+| 🌐 Web Designing and Development | NSDC | 2026 |
+| 🔍 Software Test Engineer (Beginner) | nasscom | 2026 |
+| 🛸 Drone Software Technician | nasscom | 2026 |
 
 </div>
 
 ### 🥇 Notable Achievements
 
-- **Pull Shark 🦈** - Merged 500+ Pull Requests
+- **Pull Shark 🦈** - Merged Pull Requests
 - **HaXplore Event Winner** - Best Performance Award (2024)
 - **IIT BHU CodeFest'26** - Top Performer
-- **Security Researcher** - CVEs Discovered & Disclosed
-- **Community Builder** - Growing Developer Network
+
 
 ---
 
@@ -189,9 +187,9 @@ I'm a **Data Scientist & AI Engineer** from India passionate about:
 
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=rudra520&theme=radical&hide_border=true&background=0d1117&stroke=42A5F5&ring=7C4DFF&fire=FF6B6B&currStreakLabel=42A5F5)
 
-![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rudra520&theme=radical&hide_border=true&layout=compact)
+![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rudra520&theme=radical&hide_border=true&layout=compact )
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rudra520&theme=radical&hide_border=true&show_icons=true&count_private=true)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rudra520&theme=radical&hide_border=true&show_icons=true&count_private=true )
 
 </div>
 
