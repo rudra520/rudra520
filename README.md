@@ -187,9 +187,9 @@ I'm a **Data Scientist & AI Engineer** from India passionate about:
 
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=rudra520&theme=radical&hide_border=true&background=0d1117&stroke=42A5F5&ring=7C4DFF&fire=FF6B6B&currStreakLabel=42A5F5)
 
-![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rudra520&theme=radical&hide_border=true&layout=compact )
+![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rudra520&theme=radical&hide_border=true&layout=compact)
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rudra520&theme=radical&hide_border=true&show_icons=true&count_private=true )
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rudra520&theme=radical&hide_border=true&show_icons=true&count_private=true)
 
 </div>
 
