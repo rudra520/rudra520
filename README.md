@@ -44,18 +44,6 @@ I'm a **Data Scientist & AI Engineer** from India passionate about:
 
 <br/>
 
-### 📋 Quick Profile
-
-```
-┌─────────────────────────────────────┐
-│  Name        → Rudra Pratap Singh   │
-│  Role        → Data Scientist       │
-│              → AI Engineer          │
-│  Location    → 🇮🇳 India             │
-│  Status      → 🚀 Active & Open    │
-│  Seeking     → Collaborations       │
-└─────────────────────────────────────┘
-```
 
 ---
 
