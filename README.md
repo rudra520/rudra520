@@ -147,6 +147,8 @@ I'm an **AI Engineer & Security Researcher** based in India, specializing in bui
 * 🌐 **Web Designing and Development** — *NSDC (2026)*
 * 🔍 **Software Test Engineer** — *nasscom (2026)*
 * 🛸 **Drone Software Technician** — *nasscom (2026)*
+* 💻 **AI-ML Engineer certified course** — *Reliance (2026)*
+* 🤖 **Foundation of Prompt Engineering** — *AWS Skill Builder(2026)*
 
 ### 🥇 Hackathons & Commits
 * **IIT BHU CodeFest'26** — Top Tier Performer
