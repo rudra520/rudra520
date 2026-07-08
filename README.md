@@ -9,8 +9,9 @@
 <p align="center">
   <a href="#-about-me"><strong>About</strong></a> •
   <a href="#-tech-stack"><strong>Tech Stack</strong></a> •
+  <a href="#-work-experience"><strong>Experience</strong></a> •
   <a href="#-featured-projects"><strong>Projects</strong></a> •
-  <a href="#-achievements"><strong>Achievements</strong></a> •
+  <a href="#-achievements--recognitions"><strong>Achievements</strong></a> •
   <a href="#-connect-with-me"><strong>Connect</strong></a>
 </p>
 
@@ -19,9 +20,9 @@
 <!-- Social Links with Animation -->
 <div align="center">
   
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=1a1a1a)](https://www.linkedin.com/in/rudra-pratap-singh-ba6ab637b)
+  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=1a1a1a)](https://www.linkedin.com/in/rudra520)
   [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white&labelColor=1a1a1a)](https://x.com/RudraPrata66568)
-  [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=1a1a1a)](mailto:rudra222000@gmail.com)
+  [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=1a1a1a)](mailto:rudradititsingh@gmail.com)
   [![Portfolio](https://img.shields.io/badge/Portfolio-FF6B6B?style=for-the-badge&logo=globe&logoColor=white&labelColor=1a1a1a)](https://rudra520.netlify.app/)
   [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a1a)](https://github.com/rudra520)
 
@@ -33,14 +34,14 @@
 
 <img align="right" alt="Coding GIF" src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" width="280" />
 
-I'm an **AI Engineer & Security Researcher** based in India, specializing in building high-performance intelligent systems and securing digital infrastructure.
+I'm a **Machine Learning Engineer & Security Researcher** based in Dehradun, India, specializing in RAG, LLM workflows, production-grade Python systems, and securing digital infrastructure[cite: 1].
 
-- 🧠 **Deep Learning:** Building robust neural architectures and fine-tuning foundation models.
-- 🔐 **Cybersecurity:** Exploring application security, vulnerability assessments, and ethical hacking.
-- 📚 **AI Shastra:** Actively developing an educational ecosystem to democratize machine learning for students and professionals.
-- ⚡ **Fact:** Can navigate Kali Linux environments significantly faster than a local grocery store.
+- 🧠 **Deep Learning & GenAI:** Fine-tuning foundation models, designing secure RAG pipelines, and tracing multi-modal prompt chains[cite: 1].
+- 🔐 **Cybersecurity:** Exploring application security, vulnerability assessments, and ethical hacking in Kali Linux environments[cite: 1].
+- 📚 **AI-Sastra:** Founder and Project Lead architecting responsive platform infrastructure to democratize machine learning[cite: 1].
+- ⚡ **Fact:** Can navigate Kali Linux environments significantly faster than a local grocery store[cite: 1].
 
-> **Current Focus:** Scaling AI Shastra, designing secure RAG pipelines, and contributing heavily to open-source developer tools.
+> **Current Focus:** Scaling AI-Sastra, optimizing LLM outputs via advanced RAG, and engineering reliable end-to-end intelligent systems[cite: 1].
 
 <br/>
 
@@ -49,12 +50,6 @@ I'm an **AI Engineer & Security Researcher** based in India, specializing in bui
 ## 📊 GitHub Dashboard
 
 <div align="center">
-  <table border="0">
-    <tr>
-      <td><img src="https://github-readme-stats.vercel.app/api?username=rudra520&show_icons=true&theme=radical&hide_border=true&background=0d1117&title_color=42A5F5&icon_color=7C4DFF&text_color=ffffff" width="400" alt="Rudra's GitHub Stats" /></td>
-      <td><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rudra520&layout=compact&theme=radical&hide_border=true&background=0d1117&title_color=42A5F5&text_color=ffffff" width="350" alt="Top Languages" /></td>
-    </tr>
-  </table>
   
   ![GitHub Streak](https://streak-stats.demolab.com/?user=rudra520&theme=radical&hide_border=true&background=0d1117&stroke=42A5F5&ring=7C4DFF&fire=FF6B6B&currStreakLabel=42A5F5)
 </div>
@@ -103,20 +98,63 @@ I'm an **AI Engineer & Security Researcher** based in India, specializing in bui
 
 ---
 
+## 💼 Work Experience
+
+### 🤖 **Machine Learning Intern** | *Internship Studio*
+**June 2026 – Present** | *Pune District, Maharashtra, India*
+* **Data Infrastructure & Optimization:** Utilizing NumPy and Pandas to build optimized pipelines for cleaning, structuring, and manipulating high-dimensional datasets[cite: 1].
+* **Predictive Modeling:** Designing, tuning, and evaluating foundational machine learning algorithms using Scikit-learn for classification and regression tasks[cite: 1].
+* **Statistical Visualization & Production Execution:** Translating analytical data into visual patterns and transitioning theoretical ML models into scalable, end-to-end production pipelines[cite: 1].
+
+```Stack``` `Python` `NumPy` `Pandas` `Scikit-Learn` `Data Pipelines`
+
+---
+
+### 🎯 **Prompt Engineer Intern** | *TechnoHacks EduTech Official*[cite: 1]
+**June 2026 – June 2026** | *Nasik, Maharashtra, India*[cite: 1]
+* Worked directly under the Founder, specializing in **multi-modal prompt engineering** (text + images) to solve complex business tasks[cite: 1].
+* Leveraged **LangSmith** to trace, log, and debug prompt chains, enhancing LLM model reliability, reducing latency, and managing cost constraints[cite: 1].
+* Created reusable prompt templates that standardized recurring internal workflows and translated executive business needs into prompt architecture[cite: 1].
+
+```Stack``` `LangSmith` `LLM Workflows` `Multi-Modal Prompting` `Generative AI`
+
+---
+
+### 🌐 **Campus Ambassador** | *Persevex*
+**June 2026 – June 2026** | *Online*
+* Served as the primary strategic liaison between Persevex and Uttaranchal University to drive brand awareness and promotional campaigns.
+* Connected students with career-advancing internships/training programs and gathered campus feedback data to optimize outreach strategies.
+
+---
+
+### 💻 **Front-end Developer Intern** | *CodeAlpha*
+**May 2026 – May 2026** | *Lucknow, Uttar Pradesh, India*
+* Applied web development practices to build responsive front-end user interfaces and enhance UI components across real-world application workflows.
+
+```Stack``` `HTML5` `CSS3` `JavaScript` `React`
+
+---
+
+### 🎓 **Class Representative (Section J)** | *Uttaranchal Institute of Technology*
+**August 2025 – May 2026** | *Dehradun, Uttarakhand, India*
+* Managed student-faculty communications, led administrative class initiatives, and resolved academic operations for a cohort of engineering students.
+
+---
+
 ## 🚀 Featured Projects
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### 🎓 AI Shastra 
-**Project Lead & Founder**
-* Comprehensive platform designed to democratize Machine Learning.
-* Interactive sandboxes for model experimentation and MLOps deployment pipelines.
-* Built to bridge the gap between complex mathematics and everyday implementation.
+### 🎓 AI-Sastra 
+**Founder & Project Lead**[cite: 1]
+* Comprehensive platform designed to democratize Machine Learning for students and developers[cite: 1].
+* Architecting responsive platform infrastructure and interactive sandboxes using modern web systems[cite: 1].
+* Built to bridge the gap between complex mathematics and practical implementation[cite: 1].
 
 ```🛡️ Production-Ready Stack```
-`Python` `TensorFlow` `Next.js` `FastAPI`
+`React` `Next.js` `Python` `FastAPI`[cite: 1]
 
 [View Ecosystem →](https://github.com/rudra520)
 
@@ -142,18 +180,19 @@ I'm an **AI Engineer & Security Researcher** based in India, specializing in bui
 
 ## 🏆 Achievements & Recognitions
 
+### 🥇 Competitions & Hackathons
+* 🚀 **BrainBytes Challenge (Unstop)** — Ranked **192** out of **4,000+** participants worldwide[cite: 1].
+* 🎨 **Code CrackDown (Amity University x Unstop)** — Recognized for UI/UX project submission.
+* 💻 **HaXplore Event (CodeFest'26, IIT BHU)** — Team Leader & Best Performance Winner for deploying an Operations Tracking System under pressure[cite: 1].
+* 🦈 **Pull Shark** — Recognized Open Source Contributor on GitHub.
+
 ### 🎖️ Core Certifications
+* 🤖 **Introduction to Large Language Models** — *Coursera / Google*[cite: 1]
+* 🐍 **Python Essentials 1 & Advanced Python** — *Cisco / Professional Certifications*[cite: 1]
 * 🤖 **SOAR AI to Acquire** — *Microsoft (2026)*
 * 🌐 **Web Designing and Development** — *NSDC (2026)*
 * 🔍 **Software Test Engineer** — *nasscom (2026)*
 * 🛸 **Drone Software Technician** — *nasscom (2026)*
-* 💻 **AI-ML Engineer certified course** — *Reliance (2026)*
-* 🤖 **Foundation of Prompt Engineering** — *AWS Skill Builder(2026)*
-
-### 🥇 Hackathons & Commits
-* **IIT BHU CodeFest'26** — Top Tier Performer
-* **HaXplore Hackathon** — Best Performance / Event Winner Award
-* **Pull Shark 🦈** — Recognized Open Source Contributor
 
 ---
 
@@ -161,7 +200,7 @@ I'm an **AI Engineer & Security Researcher** based in India, specializing in bui
 
 <div align="center">
 
-| 📧 [Email](mailto:rudra222000@gmail.com) | 🔗 [LinkedIn](https://www.linkedin.com/in/rudra-pratap-singh-ba6ab637b) | 🌐 [Portfolio](https://rudra520.netlify.app/) | 💻 [GitHub](https://github.com/rudra520) |
+| 📧 [Email](mailto:rudradititsingh@gmail.com) | 🔗 [LinkedIn](https://www.linkedin.com/in/rudra520) | 🌐 [Portfolio](https://rudra520.netlify.app/) | 💻 [GitHub](https://github.com/rudra520) |
 | :---: | :---: | :---: | :---: |
 
 </div>
@@ -169,7 +208,7 @@ I'm an **AI Engineer & Security Researcher** based in India, specializing in bui
 ```javascript
 // Quick hook for engineering collaborations
 if (project.requiresAI || project.requiresSecurityAudit) {
-    contact("rudra222000@gmail.com")
+    contact("rudradititsingh@gmail.com")
         .then(() => buildProductionSystem())
         .catch(() => starRepositories());
 }
