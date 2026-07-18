@@ -47,15 +47,6 @@ I'm a **Machine Learning Engineer & Security Researcher** based in Dehradun, Ind
 
 ---
 
-## 📊 GitHub Dashboard
-
-<div align="center">
-  
-  ![GitHub Streak](https://streak-stats.demolab.com/?user=rudra520&theme=radical&hide_border=true&background=0d1117&stroke=42A5F5&ring=7C4DFF&fire=FF6B6B&currStreakLabel=42A5F5)
-</div>
-
----
-
 ## 🛠️ Tech Stack
 
 <details open>
